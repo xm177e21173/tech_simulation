@@ -1,9 +1,13 @@
-<h1>Sign up</h1>
+<h1>新規登録</h1>
 <%= form_with model: @user do |f| %>
-  <%= f.label :name %>
+  <%= f.label :ユーザー名 %>
   <%= f.text_field :name %>
-  <%= f.label :email%>
+  <%= f.label :メールアドレス %>
   <%= f.text_field :email %>
+  <%= f.label :パスワード %>
+  <%= f.password_field :password %>
+  <%= f.label :確認のためパスワードをもう一度ご入力ください %>
+  <%= f.password_field :password_confirmation %>
   <%= f.submit "登録" %>
 <% end %>
-<%= link_to 'ログインはこちら', '#' %>
+<%= link_to 'ログインはこちら', login_path %>

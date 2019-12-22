@@ -10,6 +10,41 @@
   </head>
 
   <body>
+    <!-- フラッシュの表示 -->
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+    <% end %>
+    
+    <!-- ナビゲーションバー -->
+    <nav>
+      <%= link_to root_path do %>
+        <%= link_to 'HOME', root_path %>
+      <% end %>
+      <ul>
+        <% if logged_in? %>
+          <li>
+            <%= link_to logout_path, method: :delete do %>
+              <%= image_tag "icons/logout.png" %>
+            <% end %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to login_path do %>
+              <%= image_tag "icons/login.png" %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+    
     <%= yield %>
+    
+    <!-- フラッシュの自動消滅-->
+    <script>
+      $(function(){
+        $(".alert").fadeOut(5000);
+      });
+    </script>
+    
   </body>
 </html>
