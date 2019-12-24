@@ -9,6 +9,8 @@ class User < ApplicationRecord
   validates :password, format: { with: /\A(?=.*?[a-zA-Z])[a-z\d]*\z/ }
   validates :password, format: { with: /\A(?=.*?[\d])[a-z\d]*\z/ }
   
+  has_many :simulations
+  
   has_secure_password
   
 end

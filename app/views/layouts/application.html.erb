@@ -4,7 +4,7 @@
     <title>TechSimulation</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -17,9 +17,7 @@
     
     <!-- ナビゲーションバー -->
     <nav>
-      <%= link_to root_path do %>
-        <%= link_to 'HOME', root_path %>
-      <% end %>
+      <%= link_to 'ホーム', root_path %>
       <ul>
         <% if logged_in? %>
           <li>
