@@ -1,3 +1,9 @@
 <h3>(users_show)</h3>
-<h2>マイページ</h2>
+<h1><%= @user.name %>さんのページ</h1>
 <p>User ID:<%= @user.id %></p>
+
+<h2>人生設計</h2>
+<h2>結婚について</h2>
+<p><%= @plan.marriage %></p>
+<h2>子供は何人欲しいか</h2>
+<p><%= @plan.sons %>人</p>

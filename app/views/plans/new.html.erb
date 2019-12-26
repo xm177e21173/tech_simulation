@@ -1,0 +1,11 @@
+<h3>(plans_new)</h3>
+<h1>人生設計入力</h1>
+<%= form_for @plan do |f| %>
+  <%= f.label :結婚について %>
+  <%= f.text_field :marriage %>
+  <%= f.label :子供の人数 %>
+  <%= f.text_field :sons %>
+  <%= f.label :何年生まれ？ %>
+  <%= f.text_field :birth %>
+  <%= f.submit "登録" %>
+<% end %>
