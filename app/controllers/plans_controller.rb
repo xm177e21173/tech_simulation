@@ -4,11 +4,7 @@ class PlansController < ApplicationController
   end
   
   def create
-    @plan = Plan.new(
-      marriage: params[:marriage],
-      sons:     params[:sons],
-      birth:    params[:birth]
-      )
+    @plan = Plan.new(plan_params)
     @plan.user_id = session[:user_id]
     
     if @plan.save
@@ -20,5 +16,24 @@ class PlansController < ApplicationController
     
   end
   
+  def edit
+    @plan = Plan.find(params[:id])
+  end
+  
+  def update
+    @plan = Plan.find(params[:id])
+      
+    if @plan.update(plan_params)
+      redirect_to user_path(session[:user_id]), success: '人生設計を編集しました'
+    else
+      flash.now[:danger] = '人生設計を編集できませんでした'
+      render :edit
+    end
+  end
+  
+  private
+  def plan_params
+    params.require(:plan).permit(:marriage, :sons, :birth)
+  end
   
 end

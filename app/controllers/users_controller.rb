@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(session[:user_id])
-    @plan = Plan.find_by(user_id: @user.id)
+    @plan = Plan.find_by(user_id: session[:user_id])
   end
   
   def create
