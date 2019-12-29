@@ -1,5 +1,6 @@
 class PlansController < ApplicationController
   def new
+    @user = User.find(session[:user_id])
     @plan = Plan.new
   end
   

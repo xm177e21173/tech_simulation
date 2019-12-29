@@ -16,23 +16,27 @@
     <% end %>
     
     <!-- ナビゲーションバー -->
-    <nav>
-      <%= link_to 'ホーム', root_path %>
-      <ul>
-        <% if logged_in? %>
-          <li>
-            <%= link_to logout_path, method: :delete do %>
-              <%= image_tag "icons/logout.png" %>
-            <% end %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to login_path do %>
-              <%= image_tag "icons/login.png" %>
-            <% end %>
-          </li>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+      <div class="container">
+        <%= link_to root_path do %>
+          <span><%= image_tag "icons/picture.png", class: "navbar-brand" %></span>
         <% end %>
-      </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if logged_in? %>
+            <li>
+              <%= link_to logout_path, method: :delete do %>
+                <%= image_tag "icons/logout.png" %>
+              <% end %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to login_path do %>
+                <%= image_tag "icons/login.png" %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </nav>
     
     <%= yield %>

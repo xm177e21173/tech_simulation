@@ -1,3 +1,11 @@
+h1,h2,h3,h4 {
+  font-weight: 100;
+}
+
+.form-control {
+  height: 45px;
+}
+
 .alert {
   margin-bottom: 0px;
   position: fixed;
@@ -5,11 +13,95 @@
   z-index: 10000;
 }
 
-nav {
-  background-color: gray;
-  color: white;
+.navbar-transparent {
+  margin-bottom: 0px;
+  background-color: rgba(0,0,0,0.5);
+  a {
+    color: #fff !important;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  .navbar-brand {
+    padding: 0px;
+    margin-top: 15px;
+  }
   
   img {
-  height: 40px;
+    height: 40px;
   }
+}
+
+.top-page-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('bg-top.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
+.top-page-container {
+  padding-top: 100px;
+  
+  h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 60px;
+  }
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-gray {
+  color: rgba(0,0,0,0.5);
+}
+
+.btn-gray {
+  color: rgba(0,0,0,0.5);
+  border: 1px solid rgba(0,0,0,0.5);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 20px;
+  background-color: rgba(0,0,0,0);
+  
+  &:hover {
+    color: gray;
+  }
+}
+
+.users-new-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: image-url('bg-top.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+
+  .users-new-container {
+    padding-top: 100px;
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    h1 {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.plans_new_container {
+  margin-top: 30px;
 }
