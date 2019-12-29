@@ -1,0 +1,14 @@
+<h3>(costs_edit)</h3>
+<h1>費用の計算</h1>
+
+<%= form_for @cost do |f| %>
+  <%= f.label :教育費%>
+  <%= f.text_field :edu_cost %>
+  <%= f.label :老後の資金%>
+  <%= f.text_field :old_cost %>
+  <%= f.label :その他の費用 %>
+  <%= f.text_field :others %>
+  <%= f.label :目標資産額 %>
+  <%= f.text_field :target %>
+  <%= f.submit "シミュレーション" %>
+<% end %>

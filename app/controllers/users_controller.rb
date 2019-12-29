@@ -6,6 +6,15 @@ class UsersController < ApplicationController
   def show
     @user = User.find(session[:user_id])
     @plan = Plan.find_by(user_id: session[:user_id])
+    @cost = Cost.find_by(user_id: session[:user_id])
+    
+    if @cost.target
+      @today = Date.today
+      @worktime = @plan.retirement - @today.year
+      @per_year = @cost.target / @worktime
+      @per_month = @per_year / 12
+    end
+    
   end
   
   def create
