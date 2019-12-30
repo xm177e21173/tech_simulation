@@ -4,24 +4,61 @@
     
     <div class="row">
       <div class="col-md-4 user-show-container left">
-        <h3 class="text-center text-gray">【人生設計】</h2>
-        <h4 class="text-gray">結婚について</h2>
-        <p><%= @plan.marriage %></p>
-        <h4 class="text-gray">子供は何人欲しいか</h2>
-        <p><%= @plan.sons %>人</p>
-        <%= link_to '編集する', edit_plan_path(@plan.id) %>
+        <h3 class="text-center text-gray"><%= link_to '人生設計', edit_plan_path(@plan.id) %></h2>
+          <div class="single-info">
+            <div class="info-image">
+              <%= image_tag 'icons/marriage.png', class: 'single-info-icon' %>
+            </div>
+            <div class="right-info">
+              <h4 class="text-gray">結婚について</h2>
+              <p class="text-gray"><%= @plan.marriage %></p>
+            </div>
+          </div>
+          <div class="single-info">
+            <div class="info-image">
+              <%= image_tag 'icons/sons.png', class: 'single-info-icon' %>
+            </div>
+            <div class="right-info">
+              <h4 class="text-gray">子供は何人欲しいか</h2>
+              <p class="text-gray"><%= @plan.sons %>人</p>
+            </div>
+          </div>
+        
       </div>
       <div class="col-md-7 col-md-offset-1 user-show-container right">
-        <h3 class="text-center text-gray">【費用について】</h2>
-        <h4 class="text-gray">養育費</h2>
-        <p><%= @cost.edu_cost %>万円</p>
-        <h4 class="text-gray">老後の費用</h2>
-        <p><%= @cost.old_cost %>万円</p>
-        <h4 class="text-gray">その他の費用</h2>
-        <p><%= @cost.others %>万円</p>
-        <h4 class="text-gray">目標資産額</h2>
-        <p><%= @cost.target %>万円</p>
-        <%= link_to '編集する', edit_cost_path(@cost.id) %>
+        <h3 class="text-center text-gray"><%= link_to '費用', edit_plan_path(@plan.id) %></h2>
+        <div class="single-cost-left">
+          <div class="single-cost">
+            <%= image_tag 'icons/edu.png', class: 'single-info-icon' %>
+            <div class="right-cost">
+              <h4 class="text-gray">養育費</h2>
+              <p><%= @cost.edu_cost %>万円</p>
+            </div>
+          </div>
+          <div class="single-cost">
+            <%= image_tag 'icons/old.png', class: 'single-info-icon' %>
+            <div class="right-cost">
+              <h4 class="text-gray">老後の費用</h2>
+              <p><%= @cost.old_cost %>万円</p>
+            </div>
+          </div>
+        </div>
+        <div class="single-cost-right">
+          <div class="single-cost">
+            <%= image_tag 'icons/others.png', class: 'single-info-icon' %>
+            <div class="right-cost">
+              <h4 class="text-gray">その他の費用</h2>
+              <p><%= @cost.others %>万円</p>
+            </div>
+          </div>
+          <div class="single-cost">
+            <%= image_tag 'icons/target.png', class: 'single-info-icon' %>
+            <div class="right-cost">
+              <h4 class="text-gray">目標資産額</h2>
+              <p><%= @cost.target %>万円</p>
+            </div>
+          </div>
+        </div>
       </div>
       
       <h3 class="text-center text-gray">【シミュレーション】</h2>

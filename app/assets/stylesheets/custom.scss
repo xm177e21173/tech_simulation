@@ -127,3 +127,82 @@ h1,h2,h3,h4 {
 .right {
   background-color: #FFEEFF;
 }
+
+.single-info {
+  border: 1px solid rgba(0,0,0,0.5);
+  height: 80px;
+  margin-bottom: 10px;
+  padding: 5px;
+  position: relative;
+  
+  .info-image {
+    float: left;
+  }
+  
+  img {
+    position: absolute;
+    top: 15%;
+    height: 50px;
+  }
+    
+  .right-info {
+    float: right;
+    width: 70%;
+    
+    h4 {
+      border-bottom: 1px solid rgba(0,0,0,0.5);
+    }
+    
+    p {
+      margin-left: 10px;
+    }
+  }
+  
+  .single-info-icon {
+    height: 50px;
+  }
+}
+
+.single-cost-left {
+  float: left;
+  width: 48%;
+}
+
+.single-cost-right {
+  float: right;
+  width: 48%;
+}
+
+
+.single-cost {
+  border: 1px solid rgba(0,0,0,0.5);
+  height: 80px;
+  margin-bottom: 10px;
+  padding: 5px;
+  position: relative;
+  
+  img {
+    position: absolute;
+    top: 15%;
+    height: 50px;
+  }
+}
+
+.right-cost {
+  float: right;
+  width: 70%;
+  
+  h4 {
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+  }
+    
+  p {
+    margin-left: 10px;
+  }
+  
+}
+
+.text-right {
+  float: right;
+  margin-right: 10px;
+}
