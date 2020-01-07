@@ -206,3 +206,70 @@ h1,h2,h3,h4 {
   float: right;
   margin-right: 10px;
 }
+
+.simu {
+  background-color: #FFFFCC;
+}
+
+.single-simu {
+  border: 1px solid rgba(0,0,0,0.5);
+  height: 80px;
+  margin-bottom: 10px;
+  padding: 5px;
+  position: relative;
+  width: 30%;
+}
+
+.single-edit {
+  height: 200px;
+}
+
+.info-edit-wrapper {
+  padding-top: 100px;
+  background-color: #fafafa;
+  
+  h1 {
+    margin-bottom: 50px;
+  }
+}
+
+.right-icon {
+  height: 40px;
+}
+
+.des {
+  border-left: 1px solid rgba(0,0,0,0.5);
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+.title {
+  overflow: hidden;
+  margin-left: 30px;
+  margin-bottom: 5px;
+ 
+  .single-edit-icon {
+    height: 40px;
+    float: left;
+    margin-right: 20px;
+  }
+}
+
+.form-edit {
+  height: 45px;
+}
+
+.text-label {
+  margin-bottom: 3px;
+}
+
+.input {
+  overflow: hidden;
+  
+  .top {
+    float: top;
+  }
+  
+  .bottom {
+    float: bottom; 
+  }
+}

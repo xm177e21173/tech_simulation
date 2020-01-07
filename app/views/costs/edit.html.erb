@@ -1,14 +1,92 @@
-<h3>(costs_edit)</h3>
-<h1>費用の計算</h1>
-
-<%= form_for @cost do |f| %>
-  <%= f.label :教育費%>
-  <%= f.text_field :edu_cost %>
-  <%= f.label :老後の資金%>
-  <%= f.text_field :old_cost %>
-  <%= f.label :その他の費用 %>
-  <%= f.text_field :others %>
-  <%= f.label :目標資産額 %>
-  <%= f.text_field :target %>
-  <%= f.submit "シミュレーション" %>
-<% end %>
+<div class="info-edit-wrapper">
+  <div class="container">
+    <h1>費用について考える</h1>
+    <%= form_for @cost do |f| %>
+      <div class="single-edit edu-cost">
+        <div class="title">
+          <%= image_tag 'icons/edu.png', class: 'single-edit-icon' %>
+          <h4 class="text-gray"><%= f.label :教育費%></h4>
+        </div>
+        <div class="row">
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-6 des">
+            <p> 子どもを幼稚園から大学まで通わせるのにかかる費用は、全て公立の場合で１人あたり約1,000万円、高校から私立の場合で約1,300万円、全て私立の場合で約2,500万円が平均となっています。</p>
+            <p> これらに加え、受験費用や、親元を離れる場合は一人暮らしの費用もかかります。奨学金やお子さんのアルバイト代もありますが、金額に少し余裕を持ってシミュレーションしてみましょう。</p>
+          </div>
+          <div class="col-md-1 icon">
+            <%= image_tag 'icons/right.png', class: 'right-icon' %>
+          </div>
+          <div class="col-md-4 input">
+            <div class="top">
+              <p>お子さんが<%= @plan.sons %>人の場合、全て公立の場合<%= @plan.sons*1000 %>万円、全て私立の場合<%= @plan.sons*2500 %>万円が平均の金額です。</p>
+            </div>
+            <div class="bottom">
+              <h6 class="text-label"><%= f.label :教育費を設定してください。 %></h6>
+              <%= f.text_field :edu_cost, class: 'form-edit' %>万円
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="single-edit old-cost">
+        <div class="title">
+          <%= image_tag 'icons/old.png', class: 'single-edit-icon' %>
+          <h4 class="text-gray"><%= f.label :老後の資金%></h4>
+        </div>
+        <div class="row">
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-6 des">
+          </div>
+          <div class="col-md-1 icon">
+            <%= image_tag 'icons/right.png', class: 'right-icon' %>
+          </div>
+          <div class="col-md-4 input">
+            <%= f.text_field :old_cost, class: 'form-edit'%>万円
+          </div>
+        </div>
+      </div>  
+        
+      <div class="single-edit others">
+        <div class="title">
+          <%= image_tag 'icons/others.png', class: 'single-edit-icon' %>
+          <h4 class="text-gray"><%= f.label :その他の費用 %></h4>
+        </div>
+        <div class="row">
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-6 des">
+          </div>
+          <div class="col-md-1 icon">
+            <%= image_tag 'icons/right.png', class: 'right-icon' %>
+          </div>
+          <div class="col-md-4 input">
+            <%= f.text_field :others, class: 'form-edit' %>万円
+          </div>
+        </div>
+      </div>
+      
+      <div class="single-edit target">
+        <div class="title">
+          <%= image_tag 'icons/target.png', class: 'single-edit-icon' %>
+          <h4 class="text-gray"><%= f.label :目標資産額 %></h4>
+        </div>
+        <div class="row">
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-6 des">
+          </div>
+          <div class="col-md-1 icon">
+            <%= image_tag 'icons/right.png', class: 'right-icon' %>
+          </div>
+          <div class="col-md-4 input">
+            <%= f.text_field :target, class: 'form-edit' %>万円
+          </div>
+        </div>
+      </div>
+          
+      <%= f.submit "シミュレーション" %>
+    <% end %>
+  </div>
+</div>

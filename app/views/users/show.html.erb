@@ -26,7 +26,7 @@
         
       </div>
       <div class="col-md-7 col-md-offset-1 user-show-container right">
-        <h3 class="text-center text-gray"><%= link_to '費用', edit_plan_path(@plan.id) %></h2>
+        <h3 class="text-center text-gray"><%= link_to '費用', edit_cost_path(@plan.id) %></h2>
         <div class="single-cost-left">
           <div class="single-cost">
             <%= image_tag 'icons/edu.png', class: 'single-info-icon' %>
@@ -61,11 +61,19 @@
         </div>
       </div>
       
-      <h3 class="text-center text-gray">【シミュレーション】</h2>
-      <h4 class="text-gray">１年ごとの必要貯蓄額</h2>
-      <%= @per_year %>万円
-      <h4 class="text-gray">１ヶ月ごとの必要貯蓄額</h2>
-      <%= @per_month %>万円
+      <div class="row">
+        <div class="col-md-12 user-show-container simu">
+          <h3 class="text-center text-gray">シミュレーション</h2>
+          <div class="single-simu">
+            <h4 class="text-gray">１年ごとの必要貯蓄額</h2>
+            <%= @per_year %>万円
+          </div>
+          <div class="single-simu">
+            <h4 class="text-gray">１ヶ月ごとの必要貯蓄額</h2>
+            <%= @per_month %>万円
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
