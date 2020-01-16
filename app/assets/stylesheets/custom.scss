@@ -107,7 +107,7 @@ h1,h2,h3,h4 {
 }
 
 .user-show-wrapper {
-  padding-top: 100px;
+  padding-top: 71px;
   background-color: #fafafa;
   
   h1 {
@@ -222,19 +222,26 @@ h1,h2,h3,h4 {
 
 .single-edit {
   height: 200px;
+  margin-bottom: 40px;
 }
 
 .info-edit-wrapper {
   padding-top: 100px;
   background-color: #fafafa;
   
-  h1 {
-    margin-bottom: 50px;
+  .submit {
+    margin-bottom: 20px;
   }
 }
 
-.right-icon {
-  height: 40px;
+.icon {
+  position: relative;
+
+  .right-icon {
+    height: 40px;
+    position: absolute;
+    top: 40px;
+  }
 }
 
 .des {
@@ -271,5 +278,148 @@ h1,h2,h3,h4 {
   
   .bottom {
     float: bottom; 
+  }
+}
+
+.top-title {
+  margin-bottom: 50px;
+  
+  h1 {
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+  }
+  
+  p {
+    margin: 0 0 0 20px;
+  }
+  
+}
+
+.user-show-top {
+  width: 100vw;
+  position: relative;
+  margin-bottom: 60px;
+  
+  img {
+    width: 100%;
+  }
+  
+  h1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .des1 {
+    position: absolute;
+    top: 150px;
+    left: 20px;
+  }
+  
+  .des2 {
+    position: absolute;
+    top: 200px;
+    left: 20px;
+  }
+}
+
+.background-shadow-1 {
+  background: linear-gradient(to right, rgba(0,0,0,0.2), white);
+  margin-bottom: 30px;
+  
+  img {
+    height: 250px;
+    width: 100%;
+  }
+}
+
+.background-shadow-2 {
+  background: linear-gradient(to left, rgba(0,0,0,0.2), white);
+  margin-bottom: 30px;
+  
+  img {
+    height: 250px;
+    width: 100%;
+  }
+}
+
+.right-des {
+  padding-left: 30px;
+  position: relative;
+  
+  h3 {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+  
+  h4 {
+    margin-left: 10px;
+    color: black;
+  }
+  
+  .plan-button {
+    position: absolute;
+    top: 15px;
+    left: 80%;
+  }
+  
+  .target{
+    font-size: 24px;
+  }
+}
+
+.left-des {
+  position: relative;
+  
+  h3 {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .cost-button {
+    position: absolute;
+    top: 15px;
+    left: 75%;
+  }
+  
+}
+
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: rgba(0,0,0,0.5);
+  border: solid 2px rgba(0,0,0,0.5);
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-flat-border:hover {
+  background: rgba(0,0,0,0.5);
+  color: white;
+}
+
+.plan-edit-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fafafa;
+  
+  .users-new-container {
+    padding-top: 100px;
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    h1 {
+      margin-bottom: 30px;
+    }
   }
 }

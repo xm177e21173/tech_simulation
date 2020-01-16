@@ -1,6 +1,10 @@
 <div class="info-edit-wrapper">
   <div class="container">
-    <h1>費用について考える</h1>
+    <div class="top-title">
+      <h1>ライフイベントについて考える</h1>
+      <p>主なライフイベントで必要になる費用について考えてみましょう</p>
+      <p>考え方のヒントも記載していますので、参考にしてみてください</p>
+    </div>
     <%= form_for @cost do |f| %>
       <div class="single-edit edu-cost">
         <div class="title">
@@ -19,7 +23,7 @@
           </div>
           <div class="col-md-4 input">
             <div class="top">
-              <p>お子さんが<%= @plan.sons %>人の場合、全て公立の場合<%= @plan.sons*1000 %>万円、全て私立の場合<%= @plan.sons*2500 %>万円が平均の金額です。</p>
+              <p>お子さんが<%= @plan.sons %>人の場合で、全て公立のとき<%= @plan.sons*1000 %>万円、全て私立のとき<%= @plan.sons*2500 %>万円が平均の金額です。</p>
             </div>
             <div class="bottom">
               <h6 class="text-label"><%= f.label :教育費を設定してください。 %></h6>
@@ -38,12 +42,20 @@
           <div class="col-md-1">
           </div>
           <div class="col-md-6 des">
+            <p>65際以上の夫婦が不自由のない生活を送るのにかかる一ヶ月の費用の平均は24万円となっています。生活に一定のゆとりをもちたい場合、この費用は35万円となります。</p>
+            <p>年金の平均受給額である17万円との差額が貯蓄すべき金額となりますが、老後20年間生活すると仮定した場合、老後の費用はそれぞれ1,680万円、4,320万円となります。</p>
           </div>
           <div class="col-md-1 icon">
             <%= image_tag 'icons/right.png', class: 'right-icon' %>
           </div>
           <div class="col-md-4 input">
+            <div class="top">
+              <p>年金の受給開始は65歳ですので、仮に60歳で退職する場合必要な費用は増えることになります。逆に生涯現役で働くのであればこの費用は極小化されます。</p>
+            </div>
+            <div class="bottom">
+              <h6 class="text-label"><%= f.label :老後の費を設定してください。 %></h6>
             <%= f.text_field :old_cost, class: 'form-edit'%>万円
+            </div>
           </div>
         </div>
       </div>  
@@ -57,12 +69,20 @@
           <div class="col-md-1">
           </div>
           <div class="col-md-6 des">
+            <p>教育費、老後の生活費の他にかかる費用について考えてみましょう。</p>
+            <p>結婚・結納〜新婚旅行までにかかる費用は平均450万円、出産にかかる費用は1人あたり51万円、住宅購入費は建売の場合で3,340万円。あくまで一例ですがライフステージにおける大きな出費は以上のような物が考えられます。</p>
           </div>
           <div class="col-md-1 icon">
             <%= image_tag 'icons/right.png', class: 'right-icon' %>
           </div>
           <div class="col-md-4 input">
-            <%= f.text_field :others, class: 'form-edit' %>万円
+            <div class="top">
+              <p>この費用の金額は人によって大きく異なります。あなたのライフビジョンに合わせて金額を設定しましょう。</p>
+            </div>
+            <div class="bottom">
+                <h6 class="text-label"><%= f.label :その他の費用を設定してください。 %></h6>
+              <%= f.text_field :others, class: 'form-edit' %>万円
+            </div>
           </div>
         </div>
       </div>
@@ -76,17 +96,27 @@
           <div class="col-md-1">
           </div>
           <div class="col-md-6 des">
+            <p class="text-gray">以上のことを踏まえ、資産形成の到達目標を考えましょう。</p>
+            <p class="text-gray">マイページでのシミュレーションはこの金額を基に行いますので、必ず入力して、下の「シミュレーション」を押してください。</p>
           </div>
           <div class="col-md-1 icon">
             <%= image_tag 'icons/right.png', class: 'right-icon' %>
           </div>
           <div class="col-md-4 input">
-            <%= f.text_field :target, class: 'form-edit' %>万円
+            <div class="bottom">
+              <h6 class="text-label"><%= f.label :目標資産額を設定してください。 %></h6>
+              <%= f.text_field :target, class: 'form-edit' %>万円
+            </div>
           </div>
         </div>
       </div>
-          
-      <%= f.submit "シミュレーション" %>
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8 submit">
+          <%= f.submit "Simulation", class: "btn-block btn-gray" %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

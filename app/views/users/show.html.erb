@@ -1,79 +1,55 @@
 <div class="user-show-wrapper">
-  <div class="container">
-    <h1 class="text-center text-gray"><%= @user.name %>さんのページ</h1>
-    
-    <div class="row">
-      <div class="col-md-4 user-show-container left">
-        <h3 class="text-center text-gray"><%= link_to '人生設計', edit_plan_path(@plan.id) %></h2>
-          <div class="single-info">
-            <div class="info-image">
-              <%= image_tag 'icons/marriage.png', class: 'single-info-icon' %>
-            </div>
-            <div class="right-info">
-              <h4 class="text-gray">結婚について</h2>
-              <p class="text-gray"><%= @plan.marriage %></p>
-            </div>
-          </div>
-          <div class="single-info">
-            <div class="info-image">
-              <%= image_tag 'icons/sons.png', class: 'single-info-icon' %>
-            </div>
-            <div class="right-info">
-              <h4 class="text-gray">子供は何人欲しいか</h2>
-              <p class="text-gray"><%= @plan.sons %>人</p>
-            </div>
-          </div>
-        
-      </div>
-      <div class="col-md-7 col-md-offset-1 user-show-container right">
-        <h3 class="text-center text-gray"><%= link_to '費用', edit_cost_path(@plan.id) %></h2>
-        <div class="single-cost-left">
-          <div class="single-cost">
-            <%= image_tag 'icons/edu.png', class: 'single-info-icon' %>
-            <div class="right-cost">
-              <h4 class="text-gray">養育費</h2>
-              <p><%= @cost.edu_cost %>万円</p>
-            </div>
-          </div>
-          <div class="single-cost">
-            <%= image_tag 'icons/old.png', class: 'single-info-icon' %>
-            <div class="right-cost">
-              <h4 class="text-gray">老後の費用</h2>
-              <p><%= @cost.old_cost %>万円</p>
-            </div>
-          </div>
-        </div>
-        <div class="single-cost-right">
-          <div class="single-cost">
-            <%= image_tag 'icons/others.png', class: 'single-info-icon' %>
-            <div class="right-cost">
-              <h4 class="text-gray">その他の費用</h2>
-              <p><%= @cost.others %>万円</p>
-            </div>
-          </div>
-          <div class="single-cost">
-            <%= image_tag 'icons/target.png', class: 'single-info-icon' %>
-            <div class="right-cost">
-              <h4 class="text-gray">目標資産額</h2>
-              <p><%= @cost.target %>万円</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-md-12 user-show-container simu">
-          <h3 class="text-center text-gray">シミュレーション</h2>
-          <div class="single-simu">
-            <h4 class="text-gray">１年ごとの必要貯蓄額</h2>
-            <%= @per_year %>万円
-          </div>
-          <div class="single-simu">
-            <h4 class="text-gray">１ヶ月ごとの必要貯蓄額</h2>
-            <%= @per_month %>万円
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="user-show-top">
+    <%= image_tag 'user-show-top.jpeg', class: "bg-img" %>
+    <h1>
+      <%= @user.name %>さん、ようこそTech Simulationへ
+    </h1>
+    <p class="des1">ここに説明文が入る</p>
+    <p class="des2">ここに説明文が入る</p>
   </div>
+  <div class="container">
+   <div class="background-shadow-1">
+     <div class="row">
+       <div class="col-md-7 right-des">
+         <h3>1.人生設計について考える</h3>
+         <p>あなたが思い描く人生について教えてください。</p>
+         <p>どんな人生を送りたいかによって、想定すべきライフイベントは異なります。</p>  
+         <p>なんとなくでも結構です。理想の人生設計について考えてみましょう</p>
+         <%= link_to 'Simulation', edit_plan_path(@plan.id), class: "btn-flat-border plan-button" %>
+       </div>
+       <div class="col-md-5">
+         <%= image_tag 'marriage.jpg' %>
+       </div>
+     </div>
+   </div>
+   
+   <div class="background-shadow-2">
+     <div class="row">
+       <div class="col-md-5">
+         <%= image_tag 'costs.jpg' %>
+       </div>
+       <div class="col-md-7 left-des">
+         <h3>2.ライフイベントについて考える</h3>
+         <p>これから様々なライフイベントがあなたを待っています。</p>
+         <p>結婚、出産、老後、介護・・・、相場を参考にしながら考えていきましょう</p>
+         <%= link_to 'Simulation', edit_cost_path(@plan.id), class: "btn-flat-border cost-button" %>
+       </div>
+     </div>
+   </div> 
+    
+   <div class="background-shadow-1">
+     <div class="row">
+       <div class="col-md-7 right-des">
+         <h3>3.資産形成の目標をたてる</h3>
+         <p>65歳までにあなたの資産が目標の金額に達成するためには</p>
+         <div class="target">
+           <p><%= @per_month %>万円/月、<%= @per_year %>万円/年</p>
+         </div>
+         <p>の貯蓄が必要になります。</p>         
+       </div>
+       <div class="col-md-5">
+         <%= image_tag 'target.jpg' %>
+       </div>
+     </div>
+   </div>
 </div>
