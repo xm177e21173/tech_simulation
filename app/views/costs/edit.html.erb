@@ -27,7 +27,7 @@
             </div>
             <div class="bottom">
               <h6 class="text-label"><%= f.label :教育費を設定してください。 %></h6>
-              <%= f.text_field :edu_cost, class: 'form-edit' %>万円
+              <%= f.number_field :edu_cost, class: 'form-edit' %>万円
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@
             </div>
             <div class="bottom">
               <h6 class="text-label"><%= f.label :老後の費を設定してください。 %></h6>
-            <%= f.text_field :old_cost, class: 'form-edit'%>万円
+            <%= f.number_field :old_cost, class: 'form-edit'%>万円
             </div>
           </div>
         </div>
@@ -81,40 +81,17 @@
             </div>
             <div class="bottom">
                 <h6 class="text-label"><%= f.label :その他の費用を設定してください。 %></h6>
-              <%= f.text_field :others, class: 'form-edit' %>万円
+              <%= f.number_field :others, class: 'form-edit' %>万円
             </div>
           </div>
         </div>
       </div>
       
-      <div class="single-edit target">
-        <div class="title">
-          <%= image_tag 'icons/target.png', class: 'single-edit-icon' %>
-          <h4 class="text-gray"><%= f.label :目標資産額 %></h4>
-        </div>
-        <div class="row">
-          <div class="col-md-1">
-          </div>
-          <div class="col-md-6 des">
-            <p class="text-gray">以上のことを踏まえ、資産形成の到達目標を考えましょう。</p>
-            <p class="text-gray">マイページでのシミュレーションはこの金額を基に行いますので、必ず入力して、下の「シミュレーション」を押してください。</p>
-          </div>
-          <div class="col-md-1 icon">
-            <%= image_tag 'icons/right.png', class: 'right-icon' %>
-          </div>
-          <div class="col-md-4 input">
-            <div class="bottom">
-              <h6 class="text-label"><%= f.label :目標資産額を設定してください。 %></h6>
-              <%= f.text_field :target, class: 'form-edit' %>万円
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="row">
         <div class="col-md-2">
         </div>
         <div class="col-md-8 submit">
-          <%= f.submit "Simulation", class: "btn-block btn-gray" %>
+          <%= f.submit "Simulate", class: "btn-block btn-gray" %>
         </div>
       </div>
     <% end %>

@@ -6,17 +6,17 @@
           <%= form_for @plan do |f| %>
             <div class="form-group">
               <%= f.label :あなたは何年生まれですか？, class: 'text-gray' %>
-              <%= f.text_field :birth, class: "form-control" %>
+              <%= f.select :birth,[1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000], class: "form-control" %>
             </div>
             <div class="form-group">
               <%= f.label :結婚はしたいですか？, class: 'text-gray' %>
-              <%= f.text_field :marriage, class: "form-control" %>
+              <%= f.select :marriage, ["する", "しない", "既婚"], class: "form-control" %>
             </div>
             <div class="form-group">
               <%= f.label :子どもは何人ほしいですか？, class: 'text-gray' %>
-              <%= f.text_field :sons, class: "form-control" %>
+              <%= f.select :sons, [0, 1, 2, 3, 4, 5, 6], class: "form-control" %>
             </div>
-            <%= f.submit "Simulation", class: "btn-block btn-gray" %>
+            <%= f.submit "Simulate", class: "btn-block btn-gray" %>
           <% end %>
       </div>
     </div>

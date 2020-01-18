@@ -16,13 +16,24 @@
     <% end %>
     
     <!-- ナビゲーションバー -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
-        <%= link_to root_path do %>
-          <span><%= image_tag "icons/logo.png", class: "navbar-brand" %></span>
+        <% if logged_in? %>
+          <%= link_to user_path(:id) do %>
+            <span><%= image_tag "icons/logo.png", class: "navbar-brand" %></span>
+          <% end %>
+        <% else %>
+          <%= link_to root_path do %>
+            <span><%= image_tag "icons/logo.png", class: "navbar-brand" %></span>
+          <% end %>
         <% end %>
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
+            <li>
+              <%= link_to edit_user_path(:id) do %>
+                <%= image_tag "icons/mypage.png" %>
+              <% end %>
+            </li>
             <li>
               <%= link_to logout_path, method: :delete do %>
                 <%= image_tag "icons/logout.png" %>

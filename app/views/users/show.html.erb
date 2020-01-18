@@ -4,8 +4,8 @@
     <h1>
       <%= @user.name %>さん、ようこそTech Simulationへ
     </h1>
-    <p class="des1">ここに説明文が入る</p>
-    <p class="des2">ここに説明文が入る</p>
+    <p class="des1">Tech Simulationはあなたの資産形成をサポートするシミュレーションサービスです。</p>
+    <p class="des2">ここはあなたのマイページです。手順に従ってシミュレーションを始めましょう。</p>
   </div>
   <div class="container">
    <div class="background-shadow-1">
@@ -15,7 +15,7 @@
          <p>あなたが思い描く人生について教えてください。</p>
          <p>どんな人生を送りたいかによって、想定すべきライフイベントは異なります。</p>  
          <p>なんとなくでも結構です。理想の人生設計について考えてみましょう</p>
-         <%= link_to 'Simulation', edit_plan_path(@plan.id), class: "btn-flat-border plan-button" %>
+         <%= link_to '⇨ Simulation', edit_plan_path(@plan.id), class: "btn-flat-border plan-button" %>
        </div>
        <div class="col-md-5">
          <%= image_tag 'marriage.jpg' %>
@@ -31,8 +31,9 @@
        <div class="col-md-7 left-des">
          <h3>2.ライフイベントについて考える</h3>
          <p>これから様々なライフイベントがあなたを待っています。</p>
-         <p>結婚、出産、老後、介護・・・、相場を参考にしながら考えていきましょう</p>
-         <%= link_to 'Simulation', edit_cost_path(@plan.id), class: "btn-flat-border cost-button" %>
+         <p>結婚、出産、老後、介護・・・</p>
+         <p>これらにかかる費用について相場を参考にしながら考えていきましょう</p>
+         <%= link_to '⇨ Simulation', edit_cost_path(@plan.id), class: "btn-flat-border cost-button" %>
        </div>
      </div>
    </div> 

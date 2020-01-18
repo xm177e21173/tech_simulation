@@ -1,8 +1,8 @@
-<div class="users-new-wrapper">
+<div class="plan-edit-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-md-offset-4 col-md-4 users-new-container">
-        <h1 class="text-center text-gray">新規登録</h1>
+        <h2 class="text-center text-gray">ユーザー情報の編集</h1>
         <%= form_for @user do |f| %>
           <div class="form-group">
             <%= f.label :ユーザー名, class: 'text-gray' %>
@@ -23,7 +23,6 @@
           </div>
           <%= f.submit "登録", class: "btn-block btn-gray" %>
         <% end %>
-        <%= link_to 'ログインはこちら', login_path %>
       </div>
     </div>
   </div>
