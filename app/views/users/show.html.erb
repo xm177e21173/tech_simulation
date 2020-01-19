@@ -15,7 +15,10 @@
          <p>あなたが思い描く人生について教えてください。</p>
          <p>どんな人生を送りたいかによって、想定すべきライフイベントは異なります。</p>  
          <p>なんとなくでも結構です。理想の人生設計について考えてみましょう</p>
-         <%= link_to '⇨ Simulation', edit_plan_path(@plan.id), class: "btn-flat-border plan-button" %>
+         <div class="tooltip1">
+             <%= link_to '⇨ Simulation', edit_plan_path(@plan.id), class: "btn-flat-border plan-button" %>
+             <div class="description1">人生設計を編集する</div>
+         </div>
        </div>
        <div class="col-md-5">
          <%= image_tag 'marriage.jpg' %>

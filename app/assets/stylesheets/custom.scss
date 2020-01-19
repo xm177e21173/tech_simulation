@@ -343,6 +343,7 @@ h1,h2,h3,h4 {
 }
 
 .right-des {
+  height: 250px;
   padding-left: 30px;
   position: relative;
   
@@ -359,13 +360,7 @@ h1,h2,h3,h4 {
     margin-left: 10px;
     color: black;
   }
-  
-  .plan-button {
-    position: absolute;
-    top: 15px;
-    left: 75%;
-  }
-  
+
   .target{
     font-size: 24px;
   }
@@ -388,7 +383,6 @@ h1,h2,h3,h4 {
     top: 15px;
     left: 70%;
   }
-  
 }
 
 .btn-flat-border {
@@ -422,4 +416,49 @@ h1,h2,h3,h4 {
       margin-bottom: 30px;
     }
   }
+}
+
+footer {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  padding: 50px 0;
+  background-color: rgba(0,0,0,0.5);
+  color: white; 
+}
+
+
+.tooltip1 {
+  position: absolute;
+  top: 50px;
+  left: 75%;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.description1 {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  font-size: 10px;
+  line-height: 1.6em;
+  color: #fff;
+  border-radius: 5px;
+  background: #000;
+  width: 150px;
+}
+.description1:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: 15px solid transparent;
+  border-top: 15px solid #000;
+  margin-left: -15px;
+}
+.tooltip1:hover .description1{
+  display: inline-block;
+  top: -70px;
+  left: -30px;
 }
