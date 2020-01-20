@@ -1,4 +1,4 @@
-h1,h2,h3,h4 {
+h1,h2,h3,h4,h5 {
   font-weight: 100;
 }
 
@@ -233,6 +233,7 @@ h1,h2,h3,h4 {
 
 .info-edit-wrapper {
   padding-top: 100px;
+  padding-bottom: 50px;
   background-color: #fafafa;
   
   .submit {
@@ -568,4 +569,152 @@ footer {
     display: inline-block;
     top: 55px;
     left: 15px;
+}
+
+.cost-edit-title {
+  background: linear-gradient(to right, rgba(0,0,0,0.2), white);
+  position: relative;
+  height: 250px;
+  margin: 20px 0 50px 0;
+  
+  .left-contents {
+    padding: 20px 0 0 20px;
+    
+    h1 {
+      margin-bottom: 15px;
+    }
+    
+    p {
+      margin-left: 20px;
+    }
+  }
+  
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 250px;
+  }
+}
+
+
+.cost-edit-contents {
+  height: 800px;
+  position: relative;
+  margin-bottom: 30px;
+  
+  .top-contents {
+    position: relative;
+    height: 400px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 20px;
+    margin: 0 5px 0 5px;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 75px;
+    
+    h3 {
+      margin: 0 0 40px 0;
+    }
+    
+    h2 {
+      margin: 0 0 40px 0;
+      
+      span {
+        font-size: 40px;
+        font-weight: bold;
+      }
+    }
+  }
+  
+  .top-contents::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -16px;
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 16px 8px 0 8px;
+    border-color: rgba(0,0,0,0.1) transparent transparent transparent;
+  }
+  
+  .icon-img {
+    width: 100%;
+    text-align: center;
+    margin: 40px 0 40px 0; 
+    
+    img {
+      height: 100px;
+    }
+  }
+  
+  .input {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+  }
+}
+
+.top-row {
+  background: transparent;
+  width: 100%;
+  
+  .single-column-img {
+    height: 300px;
+    width: 45%;
+    display: inline-block;
+    
+    .single-column {
+      position: relative;
+      height: 180px;
+      background: rgba(0,0,0,0.1);
+      border-radius: 15px;
+      margin: 0 5px 0 5px;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 20px 5px 0 5px;
+      
+      h5 {
+        span {
+          font-weight: bold;
+          font-size: 20px;
+        }
+      }
+      
+      p {
+        font-size: 10px;
+        margin: 0 0 5px 0;
+      }
+      
+    }
+    
+    .single-column::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -10px;
+      display: block;
+      width: 0;
+      height: 0;
+      margin: 0 auto;
+      border-style: solid;
+      border-width: 10px 8px 0 8px;
+      border-color: rgba(0,0,0,0.1) transparent transparent transparent;
+    }
+    
+    .icon-img {
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+    }
+    
+    img {
+      height: 60px;
+    }
+  }
 }
