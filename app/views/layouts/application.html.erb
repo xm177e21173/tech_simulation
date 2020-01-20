@@ -30,20 +30,29 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li>
-              <%= link_to edit_user_path(:id) do %>
-                <%= image_tag "icons/mypage.png" %>
-              <% end %>
+              <div class="tooltip-edituser">
+                <%= link_to edit_user_path(:id) do %>
+                  <%= image_tag "icons/mypage.png" %>
+                <% end %>
+                <div class="description-edituser">ユーザー情報の編集</div>
+                </div>
             </li>
             <li>
-              <%= link_to logout_path, method: :delete do %>
-                <%= image_tag "icons/logout.png" %>
-              <% end %>
+              <div class="tooltip-session">
+                <%= link_to logout_path, method: :delete do %>
+                  <%= image_tag "icons/logout.png" %>
+                <% end %>
+                <div class="description-session">ログアウト</div>
+              </div>
             </li>
           <% else %>
             <li>
-              <%= link_to login_path do %>
-                <%= image_tag "icons/login.png" %>
-              <% end %>
+              <div class="tooltip-session">
+                <%= link_to login_path do %>
+                  <%= image_tag "icons/login.png" %>
+                <% end %>
+                <div class="description-session">ログイン<div>
+              </div>
             </li>
           <% end %>
         </ul>
@@ -55,11 +64,11 @@
     <!-- フラッシュの自動消滅-->
     <script>
       $(function(){
-        $(".alert").fadeOut(5000);
+        $(".alert").fadeOut(3000);
       });
     </script>
     <footer>
-      <p>©︎ All rights reserved by R.Horikiri</p>
+      <p>©︎ All rights reserved Tech Simulation</p>
     </footer>
   </body>
 </html>

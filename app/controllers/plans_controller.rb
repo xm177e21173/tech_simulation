@@ -24,7 +24,6 @@ class PlansController < ApplicationController
   
   def update
     @plan = Plan.find(params[:id])
-      
     if @plan.update(plan_edit_params)
       redirect_to user_path(session[:user_id]), success: '人生設計を編集しました'
     else

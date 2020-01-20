@@ -13,9 +13,10 @@ class CostsController < ApplicationController
   
   def update
     @cost = Cost.find(params[:id])
-      
     if @cost.update(cost_params)
-      redirect_to user_path(session[:user_id]), success: 'シミュレーションを更新しました'
+       @cost.target = @cost.edu_cost + @cost.old_cost + @cost.others
+       @cost.save
+       redirect_to user_path(session[:user_id]), success: 'シミュレーションを更新しました'
     else
       flash.now[:danger] = '費用についての情報を編集できませんでした'
       render :edit

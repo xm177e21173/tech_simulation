@@ -36,7 +36,10 @@
          <p>これから様々なライフイベントがあなたを待っています。</p>
          <p>結婚、出産、老後、介護・・・</p>
          <p>これらにかかる費用について相場を参考にしながら考えていきましょう</p>
-         <%= link_to '⇨ Simulation', edit_cost_path(@plan.id), class: "btn-flat-border cost-button" %>
+         <div class="tooltip2">
+           <%= link_to '⇨ Simulation', edit_cost_path(@plan.id), class: "btn-flat-border cost-button" %>
+           <div class="description2">費用の設定を編集する</div>
+         </div>
        </div>
      </div>
    </div> 
