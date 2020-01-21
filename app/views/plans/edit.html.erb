@@ -10,7 +10,9 @@
             </div>
             <div class="form-group">
               <%= f.label :結婚はしたいですか？, class: 'text-gray' %>
-              <%= f.select :marriage, ["する", "しない", "既婚"], class: "form-control" %>
+              <%= f.radio_button :marriage, "する" %>する
+              <%= f.radio_button :marriage, "しない" %>しない
+              <%= f.radio_button :marriage, "既婚" %>既婚
             </div>
             <div class="form-group">
               <%= f.label :子どもは何人ほしいですか？, class: 'text-gray' %>
