@@ -3,7 +3,7 @@ class CostsController < ApplicationController
     @cost = Cost.new
     @cost.user_id = session[:user_id]
     @cost.save
-    redirect_to user_path(@cost.user_id), success: '人生設計を登録しました'
+    redirect_to user_path(@cost.user_id), success: 'ユーザー登録しました'
   end
   
   def edit
