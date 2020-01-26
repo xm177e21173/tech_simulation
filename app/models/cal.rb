@@ -1,0 +1,2 @@
+class Cal < ApplicationRecord
+end

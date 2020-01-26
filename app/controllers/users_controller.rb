@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
     @plan = Plan.find_by(user_id: session[:user_id])
     @cost = Cost.find_by(user_id: session[:user_id])
+    @cal  = Cal.find_by(user_id: session[:user_id])
     
     if @cost.target
       @today = Date.today

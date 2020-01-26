@@ -1,0 +1,138 @@
+<div class="info-edit-wrapper">
+  <div class="cost-edit-title">
+    <div class="left-contents">
+      <h1>資産形成の目標をたてる</h1>
+      <p>ここに説明文が入る</p>
+      <p>ここに説明文が入る</p>
+    </div>
+    <div class="right-contents">
+      <%= image_tag 'target.jpg' %>
+    </div>
+  </div>
+  
+  <div class"container">
+    <div class="graph">
+      <canvas id="myChart"></canvas>
+     
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+      <script>
+        var ChartData;
+        var ctx = document.getElementById('myChart').getContext('2d');
+              
+        ChartData = new Chart(ctx, {
+          type: 'bar',
+          data:{
+                
+            //X軸の情報
+            labels: ['20~24歳', '25~29歳', '30~34歳', '35~39歳', '40~44歳', '45~49歳', '50~54歳', '55~59歳', '60~64歳', '65歳~'],
+                  
+            //Y軸の情報
+            datasets: [{
+              //グラフの種類
+              type: 'bar',
+              //凡例名
+              label: "各年齢帯での想定される費用",
+              //情報
+              data: [<%= @cal.g1 %>, <%= @cal.g2 %>, <%= @cal.g3 %>, <%= @cal.g4 %>, <%= @cal.g5 %>, <%= @cal.g6 %>, <%= @cal.g7 %>, <%= @cal.g8 %>, <%= @cal.g9 %>, <%= @cal.g10 %>],
+              //背景色
+              backgroundColor: "rgba(54,162,235,0.2)",
+              //線色
+              borderColor: 'rgb(54,162,235)',
+              //先の太さ
+              borderWidth: 1,
+            },
+            {
+              type: 'line',  //折れ線グラフ
+              label: "累積費用",
+              data: [<%= @cal.t1 %>, <%= @cal.t2 %>, <%= @cal.t3 %>, <%= @cal.t4 %>, <%= @cal.t5 %>, <%= @cal.t6 %>, <%= @cal.t7 %>, <%= @cal.t8 %>, <%= @cal.t9 %>, <%= @cal.t10 %>],
+              backgroundColor: "rgba(255, 99, 132,0.2)",
+              borderColor: "rgb(255, 99, 132)",
+              borderWidth: 1.2,
+              //ポイントの背景色
+              pointBackgroundColor: "rgba(255, 99, 132, 0.2)",
+              //ポイントの形(circle[○],rect[□],triangle[△]等がある)
+              pointStyle: 'circle',
+              //ポイントの半径
+              radius: 4,
+              //ホバー時のポイント背景色
+              pointHoverBackgroundColor: "rgba(255, 99, 132, 0.2)",
+              //ホバー時のポイントの半径
+              pointHoverRadius: 6,
+              //ホバー時のポイント背景色
+              pointHoverBorderColor: "rgb(255, 99, 132)",
+              //ホバー時の先の太さ
+              pointHoverBorderWidth: 2,
+              //ベジェ曲線の張力（0＝直線） 
+              lineTension: 0,
+              //線下を塗りつぶすかどうか
+              fill: false,
+              //軸のID（複数軸存在する場合）
+              
+            }   
+            ,{
+              type: 'line',
+              label: "目標資産額への平均",
+              data: [300, 500, 700, 900, 1100, 1300, 1500, 1700, 1900, 2100],
+              backgroundColor: "rgba(100, 170, 100,0.2)",
+              borderColor: "rgb(100, 170, 100)",
+              pointBackgroundColor: "rgba(100, 170, 100, 0.2)",
+              pointHoverBackgroundColor: "rgba(100, 170, 100, 0.2)",
+              pointStyle: 'triangle',
+              radius: 4,
+              pointHoverRadius: 7,
+              borderWidth: 1.2,
+              pointHoverBorderColor: "rgb(100, 170, 100)",
+              pointHoverBorderWidth: 2,
+              lineTension: 0,
+              fill: false,
+              
+            }]
+          },
+            options: {
+              legend: {
+                //凡例
+                display: true
+              },
+              tooltips: {
+                //ツールチップ
+                enabled: true
+              },
+              scales: {
+                //Y軸のオプション
+                yAxes: [{
+                  scaleLabel: {
+                    fontColor: "black"
+                      },
+                  gridLines: {
+                    color: "rgba(126, 126, 126, 0.4)",
+                    zeroLineColor: "black"
+                  },
+                  ticks: {
+                    fontColor: "black",
+                    beginAtZero: true,
+                    suggestedMax: 3000,
+                    stepSize: 500
+                  }
+                }],
+                  //X軸のオプション
+                  xAxes: [{
+                    scaleLabel: {
+                      fontColor: "black",
+                      display: true,
+                      labelString: '日付'
+                    },
+                    gridLines: {
+                      color: "rgba(126, 126, 126, 0.4)",
+                      zeroLineColor: "black"
+                    },
+                    ticks: {
+                      fontColor: "black"
+                    }
+                }]
+              }
+            }
+        });
+      </script>
+    </div>
+  </div>
+</div>

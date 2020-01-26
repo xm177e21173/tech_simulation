@@ -499,6 +499,42 @@ footer {
   left: -12px;
 }
 
+.tooltip3 {
+  position: absolute;
+  top: 20px;
+  left: 75%;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.description3 {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.6em;
+  color: #fff;
+  border-radius: 5px;
+  background: #000;
+  width: 140px;
+}
+.description3:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: 15px solid transparent;
+  border-top: 15px solid #000;
+  margin-left: -15px;
+}
+
+.tooltip3:hover .description3{
+  display: inline-block;
+  top: -60px;
+  left: -12px;
+}
+
 
 
 .tooltip-edituser {
@@ -659,12 +695,102 @@ footer {
   }
 }
 
+.cost-edit-contents-right {
+  height: 800px;
+  position: relative;
+  margin-bottom: 50px;
+  
+  .contents-row {
+    
+    .bubble {
+      position: relative;
+      height: 100px;
+      background: rgba(0,0,0,0.1);
+      border-radius: 15px;
+      margin: 0 5px 20px 5px;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 20px 5px 0 5px;
+      
+      .left-contents {
+        display: inline-block;
+        width: 40%;
+      }
+      
+      .right-contents {
+        display: inline-block;
+        width: 55%;
+      }
+      
+      h5 {
+        span {
+          font-weight: bold;
+          font-size: 20px;
+        }
+      }
+      
+      p {
+        font-size: 10px;
+        margin: 0 0 5px 0;
+      }
+    }
+    
+    .bubble::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -10px;
+      display: block;
+      width: 0;
+      height: 0;
+      margin: 0 auto;
+      border-style: solid;
+      border-width: 10px 8px 0 8px;
+      border-color: rgba(0,0,0,0.1) transparent transparent transparent;
+    }
+    
+    .bottom-contents {
+      height: 100px;
+      
+      .icon-img {
+        display: inline-block;
+        text-align: center;
+        width: 30%;
+        height: 100%;
+        
+        img {
+          height: 60px;
+        }
+      }
+      
+      .input {
+        display: inline-block;
+        text-align: center;
+        width: 65%;
+        font-size: 11px
+      }
+    }
+  }
+  
+  .others {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+  }
+}
+
 .top-row {
   background: transparent;
   width: 100%;
   
+  .bottom {
+    height : 300px;
+  }
+  
+  
   .single-column-img {
-    height: 300px;
+    height: 100%;
     width: 45%;
     display: inline-block;
     
@@ -689,8 +815,8 @@ footer {
         font-size: 10px;
         margin: 0 0 5px 0;
       }
-      
     }
+    
     
     .single-column::after {
       content: "";
@@ -708,13 +834,77 @@ footer {
     }
     
     .icon-img {
-      width: 100%;
       text-align: center;
-      margin-top: 30px;
-    }
-    
-    img {
-      height: 60px;
+      margin: 20px 0 40px 0; 
+  
+      img {
+        height: 70px;
+      }
     }
   }
+}
+
+.single-plan-editter {
+  height: 180px;
+  margin-bottom: 30px;
+  
+  .marriage {
+    
+  }
+  
+  .sons {
+    
+  }
+  
+  .myhome {
+    
+  }
+  
+  .others {
+    
+  }
+  
+  
+  .left-contents {
+    height: 100%;
+    text-align: center;
+    
+    img {
+      height: 50%;
+    }
+  }
+  
+  .right-contents {
+    height: 100%;
+      
+    .bubble {
+      text-align: left;
+      position: relative;
+      height: 180px;
+      background: rgba(0,0,0,0.1);
+      border-radius: 15px;
+      margin: 0 5px 0 5px;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 20px 5px 0 5px;
+    }
+    
+    .bubble::after {
+      content: "";
+      position: absolute;
+      left: -20px;
+      right: 0;
+      bottom: 50%;
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 20px 20px 20px 0px;
+      border-color: transparent rgba(0,0,0,0.1) transparent transparent;
+    }
+  }
+}
+
+.graph {
+  padding: 0 20px 0 20px;
 }

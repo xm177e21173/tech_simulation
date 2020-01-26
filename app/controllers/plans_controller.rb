@@ -8,11 +8,11 @@ class PlansController < ApplicationController
       user_id: session[:user_id],
       retirement: 0,
       severance: 0,
-      when_marriage: 18,
+      when_marriage: 0,
       wedding: "わからない",
-      first_son: 18,
-      last_son: 18,
-      myhome: "わからない",
+      first_son: 0,
+      last_son: 0,
+      myhome: "5",
       when_myhome: 18,
       )
     @plan.save
@@ -20,13 +20,13 @@ class PlansController < ApplicationController
   end
     
   def edit
-    @plan = Plan.find(params[:id])
+    @plan = Plan.find_by(user_id: session[:user_id])
   end
   
   def update
-    @plan = Plan.find(params[:id])
-    if @plan.update(plan_edit_params)
-       @plan.retirement = params[:birth] + 65
+    @plan = Plan.find_by(user_id: session[:user_id])
+    if @plan.update(plan_params)
+       @plan.retirement = @plan.birth + 65
        @plan.save
        redirect_to user_path(session[:user_id]), success: '人生設計を編集しました'
     else
@@ -36,11 +36,19 @@ class PlansController < ApplicationController
   end
   
   private
-  def plan_new_params
-    params.require(:plan).permit(:marriage, :sons, :birth)
-  end
-  
-  def plan_edit_params
-    params.require(:plan).permit(:marriage, :sons)
+  def plan_params
+    params.require(:plan).permit(
+      :birth,
+      :marriage,
+      :sons,
+      :when_marriage,
+      :wedding,
+      :sons,
+      :first_son,
+      :last_son,
+      :myhome,
+      :when_myhome,
+      :saving,
+      :severance)
   end
 end

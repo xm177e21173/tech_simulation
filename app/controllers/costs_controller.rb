@@ -3,7 +3,7 @@ class CostsController < ApplicationController
     @cost = Cost.new
     @cost.user_id = session[:user_id]
     @cost.save
-    redirect_to user_path(@cost.user_id), success: 'ユーザー登録しました'
+    redirect_to new_cal_path
   end
   
   def edit
@@ -14,7 +14,7 @@ class CostsController < ApplicationController
   def update
     @cost = Cost.find(params[:id])
     if @cost.update(cost_params)
-       @cost.target = @cost.edu_cost + @cost.old_cost + @cost.others
+       @cost.target = @cost.edu_cost + @cost.old_cost + @cost.others + @cost.myhome_cost + @cost.marriage_cost
        @cost.save
        redirect_to user_path(session[:user_id]), success: 'シミュレーションを更新しました'
     else
@@ -25,6 +25,12 @@ class CostsController < ApplicationController
   
   private
   def cost_params
-    params.require(:cost).permit(:edu_cost, :old_cost, :others, :target)
+    params.require(:cost).permit(
+      :edu_cost,
+      :old_cost,
+      :others,
+      :marriage_cost,
+      :myhome_cost
+      )
   end
 end

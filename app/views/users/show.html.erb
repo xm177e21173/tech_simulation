@@ -16,7 +16,7 @@
          <p>どんな人生を送りたいかによって、想定すべきライフイベントは異なります。</p>  
          <p>なんとなくでも大丈夫です。理想の人生設計について考えてみましょう</p>
          <div class="tooltip1">
-             <%= link_to '⇨ Simulation', edit_plan_path(@plan.id), class: "btn-flat-border plan-button" %>
+             <%= link_to '⇨ Simulation', edit_plan_path(@plan.user_id), class: "btn-flat-border plan-button" %>
              <div class="description1">人生設計を編集する</div>
          </div>
        </div>
@@ -37,7 +37,7 @@
          <p>結婚、出産、老後、介護・・・</p>
          <p>これらにかかる費用について相場を参考にしながら考えていきましょう</p>
          <div class="tooltip2">
-           <%= link_to '⇨ Simulation', edit_cost_path(@plan.id), class: "btn-flat-border cost-button" %>
+           <%= link_to '⇨ Simulation', edit_cost_path(@plan.user_id), class: "btn-flat-border cost-button" %>
            <div class="description2">費用の設定を編集する</div>
          </div>
        </div>
@@ -55,6 +55,10 @@
              <p><%= @per_month %>万円/月、<%= @per_year %>万円/年</p>
            </div>
            <p>の貯蓄が必要になります。</p>
+           <div class="tooltip3">
+             <%= link_to '⇨ Simulation', edit_cal_path(@cal.user_id), class: "btn-flat-border plan-button" %>
+             <div class="description3">人生設計を編集する</div>
+         </div>
          <% else %>
            <p>資産形成の目標金額が定まっていません。</p>
            <p>このページに従って順番に考えていきましょう</p>

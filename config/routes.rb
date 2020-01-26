@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get 'cals/new'
   root 'pages#index'
 
   resources :users
   resources :plans
   resources :costs
+  resources :cals
 
   get    'sessions/new'
   get    '/login',  to: 'sessions#new'

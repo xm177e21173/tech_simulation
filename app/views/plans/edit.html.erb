@@ -1,26 +1,118 @@
-<div class="plan-edit-wrapper">
-  <div class="container users-new-container">
-    <h1 class="text-center text-gray">人生について考える</h1>
-    <div class="row">
-      <div class="col-md-offset-4 col-md-4 plans_new_container">
-          <%= form_for @plan do |f| %>
-            <div class="form-group">
-              <%= f.label :あなたは何年生まれですか？, class: 'text-gray' %>
-              <%= f.select :birth,[1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000], class: "form-control" %>
-            </div>
-            <div class="form-group">
-              <%= f.label :結婚はしたいですか？, class: 'text-gray' %>
-              <%= f.radio_button :marriage, "する" %>する
-              <%= f.radio_button :marriage, "しない" %>しない
-              <%= f.radio_button :marriage, "既婚" %>既婚
-            </div>
-            <div class="form-group">
-              <%= f.label :子どもは何人ほしいですか？, class: 'text-gray' %>
-              <%= f.select :sons, [0, 1, 2, 3, 4, 5, 6], class: "form-control" %>
-            </div>
-            <%= f.submit "Simulate", class: "btn-block btn-gray" %>
-          <% end %>
-      </div>
+<div class="info-edit-wrapper">
+  <div class="cost-edit-title">
+    <div class="left-contents">
+      <h1>生き方について考える</h1>
+      <p>ここに説明が入る</p>
+      <p>ここに説明が入る</p>
     </div>
+    <div class="right-contents">
+      <%= image_tag 'marriage.jpg' %>
+    </div>
+  </div>
+  
+  <div class="container">
+    <%= form_for @plan do |f| %>
+      <div class="row">
+        <div class="single-plan-editter marriage">
+          <div class="col-md-offset-1 col-md-4 left-contents">
+            <h3>結婚について</h3>
+            <%= image_tag 'icons/marriage.png' %>
+          </div>
+          <div class="col-md-6 right-contents">
+            <div class="bubble">
+              <div class="form-group">
+                <%= f.label :結婚はしたいですか？, class: 'text-gray' %>
+                <%= f.radio_button :marriage, "1" %>する
+                <%= f.radio_button :marriage, "2" %>しない
+                <%= f.radio_button :marriage, "3" %>既婚
+              </div>
+              <div class="form-group">
+                <%= f.label :何歳で結婚したいですか？, class: 'text-gray' %>
+                <%= f.select :when_marriage,[["20~24", 1], ["25~29", 2], ["30~34", 3], ["35~39", 4], ["40~44", 5], ["45~49", 6], ["50~54", 7], ["55~59", 8],["60~64", 9], ["65~", 10] ], class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :結婚式は挙げたいですか？, class: 'text-gray' %>
+                <%= f.radio_button :wedding, "1" %>友人・知人も呼んで盛大に！
+                <%= f.radio_button :wedding, "2" %>親族だけでアットホームに！
+                <%= f.radio_button :wedding, "3" %>2人だけで挙式！
+                <%= f.radio_button :wedding, "4" %>挙げない
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="single-plan-editter sons">
+          <div class="col-md-offset-1 col-md-4 left-contents">
+            <h3>こどもについて</h3>
+            <%= image_tag 'icons/family.jpg' %>
+          </div>
+          <div class="col-md-6 right-contents">
+            <div class="bubble">
+              <div class="form-group">
+                <%= f.label :子どもは何人ほしいですか？, class: 'text-gray' %>
+                <%= f.select :sons, [0, 1, 2, 3, 4, 5, 6], class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :第一子はいつ欲しいですか？, class: 'text-gray' %>
+                <%= f.select :first_son, [["20~24", 1], ["25~29", 2], ["30~34", 3], ["35~39", 4], ["40~44", 5], ["45~49", 6], ["50~54", 7], ["55~59", 8],["60~64", 9], ["65~", 10] ], class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :末子はいつ欲しいですか？, class: 'text-gray' %>
+                <%= f.select :last_son, [["20~24", 1], ["25~29", 2], ["30~34", 3], ["35~39", 4], ["40~44", 5], ["45~49", 6], ["50~54", 7], ["55~59", 8],["60~64", 9], ["65~", 10] ], class: "form-control" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="row">
+        <div class="single-plan-editter myhome">
+          <div class="col-md-offset-1 col-md-4 left-contents">
+            <h3>住まいについて</h3>
+            <%= image_tag 'icons/house.png' %>
+          </div>
+          <div class="col-md-6 right-contents">
+            <div class="bubble">
+              <div class="form-group">
+                <%= f.label :住宅の購入予定はありますか？, class: 'text-gray' %>
+                <%= f.radio_button :myhome, "1" %>新築のマイホーム
+                <%= f.radio_button :myhome, "2" %>建売物件
+                <%= f.radio_button :myhome, "3" %>中古物件
+                <%= f.radio_button :myhome, "4" %>買わない
+                <%= f.radio_button :myhome, "5" %>わからない
+              </div>
+              <div class="form-group">
+                <%= f.label :いつ購入しますか？, class: 'text-gray' %>
+                <%= f.select :when_myhome, [["20~24", 1], ["25~29", 2], ["30~34", 3], ["35~49", 4], ["50~54", 5], ["55~59", 6],["60~64", 7], ["65~", 8] ], class: "form-control" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="single-plan-editter others">
+          <div class="col-md-offset-1 col-md-4 left-contents">
+            <h3>その他・お金について</h3>
+            <%= image_tag 'icons/others.png' %>
+          </div>
+          <div class="col-md-6 right-contents">
+            <div class="bubble">
+              <div class="form-group">
+                <%= f.label :あなたは何年生まれですか？, class: 'text-gray' %>
+                <%= f.select :birth,[1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000], class: "form-control" %>
+              </div>
+              <div class="form_group">
+                <%= f.label :いま貯金はどのくらいありますか？, class: 'text-gray' %>
+                <%= f.number_field :saving, class: 'form-edit' %>万円
+              </div>
+              <div class="form_group">
+                <%= f.label :勤務先の退職金はどのくらいですか？, class: 'text-gray' %>
+                <%= f.number_field :severance, class: 'form-edit' %>万円
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= f.submit "Simulate", class: "btn-block btn-gray" %>
+    <% end %>
   </div>
 </div>
