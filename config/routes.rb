@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'cals/new'
   root 'pages#index'
+  get  '/about', to: 'pages#about' 
 
   resources :users
   resources :plans

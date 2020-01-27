@@ -7,23 +7,26 @@ class CalsController < ApplicationController
   end
   
   def edit
-    @user = User.find(session[:user_id])
-    @plan = Plan.find_by(user_id: @user.id)
-    @cost = Cost.find_by(user_id: @user.id)
-    @cal  = Cal.find_by(user_id: @user.id)
+    set_info
     
     edu_cost_simulate
     old_cost_simulate
     myhome_cost_simulate
     marriage_cost_simulate
     total_cost_set
+    average_cost_set
     
     @cal.save
     redirect_to cal_path(@cal.user_id)
- end
+  end
   
   def show
-    @cal  = Cal.find_by(user_id: session[:user_id])
+    set_info
+    
+    @to_save_target = @cost.target - @plan.severance
+    @graph_upper_1 = @to_save_target / 1000
+    @graph_upper = @graph_upper_1 + 1
+  
   end
   
   private
@@ -181,7 +184,22 @@ class CalsController < ApplicationController
     @cal.t7 = @cal.t6 + @cal.g7
     @cal.t8 = @cal.t7 + @cal.g8
     @cal.t9 = @cal.t8 + @cal.g9
-    @cal.t10 = @cal.t9 + @cal.g10
+    @cal.t10 = @cal.t9 + @cal.g10 - @plan.severance
+  end
+  
+  def average_cost_set
+    to_save = @cost.target - @plan.saving - @plan.severance
+    single_to_save = to_save / 9
+    @cal.a1 = @plan.saving
+    @cal.a2 = @cal.a1 + single_to_save
+    @cal.a3 = @cal.a2 + single_to_save
+    @cal.a4 = @cal.a3 + single_to_save
+    @cal.a5 = @cal.a4 + single_to_save
+    @cal.a6 = @cal.a5 + single_to_save
+    @cal.a7 = @cal.a6 + single_to_save
+    @cal.a8 = @cal.a7 + single_to_save
+    @cal.a9 = @cal.a8 + single_to_save
+    @cal.a10 = @cal.a9 + single_to_save
   end
   
 end

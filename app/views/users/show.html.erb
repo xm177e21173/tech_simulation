@@ -1,72 +1,115 @@
-<div class="user-show-wrapper">
-  <div class="user-show-top">
-    <%= image_tag 'user-show-top.jpeg', class: "bg-img" %>
-    <h1>
-      <%= @user.name %>さん、ようこそTech Simulationへ
-    </h1>
-    <p class="des1">Tech Simulationはあなたの資産形成をサポートするシミュレーションサービスです。</p>
-    <p class="des2">ここはあなたのマイページです。手順に従ってシミュレーションを始めましょう。</p>
-  </div>
+<div class="mypage-wrapper">
   <div class="container">
-   <div class="background-shadow-1">
-     <div class="row">
-       <div class="col-md-7 right-des">
-         <h3>1.人生設計について考える</h3>
-         <p>あなたが思い描く人生について教えてください。</p>
-         <p>どんな人生を送りたいかによって、想定すべきライフイベントは異なります。</p>  
-         <p>なんとなくでも大丈夫です。理想の人生設計について考えてみましょう</p>
-         <div class="tooltip1">
-             <%= link_to '⇨ Simulation', edit_plan_path(@plan.user_id), class: "btn-flat-border plan-button" %>
-             <div class="description1">人生設計を編集する</div>
-         </div>
-       </div>
-       <div class="col-md-5">
-         <%= image_tag 'marriage.jpg' %>
-       </div>
-     </div>
-   </div>
-   
-   <div class="background-shadow-2">
-     <div class="row">
-       <div class="col-md-5">
-         <%= image_tag 'costs.jpg' %>
-       </div>
-       <div class="col-md-7 left-des">
-         <h3>2.ライフイベントについて考える</h3>
-         <p>これから様々なライフイベントがあなたを待っています。</p>
-         <p>結婚、出産、老後、介護・・・</p>
-         <p>これらにかかる費用について相場を参考にしながら考えていきましょう</p>
-         <div class="tooltip2">
-           <%= link_to '⇨ Simulation', edit_cost_path(@plan.user_id), class: "btn-flat-border cost-button" %>
-           <div class="description2">費用の設定を編集する</div>
-         </div>
-       </div>
-     </div>
-   </div> 
-    
-   <div class="background-shadow-1">
-     <div class="row">
-       <div class="col-md-7 right-des">
-         <h3>3.資産形成の目標をたてる</h3>
-         <% if @cost.target %>
-           <p>あなたの資産形成の目標金額は<%= @cost.target %>万円です。</p>
-           <p>65歳までにあなたの資産が目標の金額に達成するためには</p>
-           <div class="target">
-             <p><%= @per_month %>万円/月、<%= @per_year %>万円/年</p>
-           </div>
-           <p>の貯蓄が必要になります。</p>
-           <div class="tooltip3">
-             <%= link_to '⇨ Simulation', edit_cal_path(@cal.user_id), class: "btn-flat-border plan-button" %>
-             <div class="description3">人生設計を編集する</div>
-         </div>
-         <% else %>
-           <p>資産形成の目標金額が定まっていません。</p>
-           <p>このページに従って順番に考えていきましょう</p>
-         <% end %>
-       </div>
-       <div class="col-md-5">
-         <%= image_tag 'target.jpg' %>
-       </div>
-     </div>
-   </div>
+    <div class="page-title">
+      <h2>マイページ</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="left-contents">
+          <div class="title-area text-center">
+            <h5>ユーザー情報</h5>
+          </div>
+          <div class="contents-area">
+            <div class="icon-area">
+              <%= image_tag "icons/icon.png" %>
+            </div>
+            <div class="single-contents">
+              <h6>ユーザー名</h6>
+              <p><%= @user.name %></p>
+            </div>
+            <div class="single-contents">
+              <h6>ユーザーID</h6>
+              <p><%= @user.id %></p>
+            </div>
+            <div class="single-contents">
+              <h6>メールアドレス</h6>
+              <p><%= @user.email %></p>
+            </div>
+          </div>
+          <div class="bottun-area">
+            <%= link_to '⇨ 編集する', edit_user_path(@user.id), class: "btn-flat-border" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="right-contents">
+          <div class="title-area text-left">
+            <h5>人生設計について</h5>
+          </div>
+          <div class="des-area">
+            <div class="single-contents">
+              <h6>結婚</h6>
+              <p><%= @when_marriage %>結婚<%= @plan.marriage %>。挙式は<%= @plan.wedding %></p>
+            </div>
+            <div class="single-contents">
+              <h6>こども</h6>
+              <p><%= @when_first_son %>から<%= @when_last_son %>までに<%= @plan.sons %>人</p>
+            </div>
+            <div class="single-contents">
+              <h6>すまい</h6>
+              <p><%= @when_myhome %>に<%= @plan.myhome %>を購入</p>
+            </div>
+            <div class="single-contents">
+              <h6>お金・その他</h6>
+              <p>貯金：<%= @plan.saving %>万円　退職金：<%= @plan.severance %>万円</p>
+            </div>
+          </div>
+          <div class="bottun-area">
+            <%= link_to '⇨ 編集する', edit_plan_path(@plan.user_id), class: "btn-flat-border" %>
+          </div>
+        </div>
+        <div class="right-contents">
+          <div class="title-area text-left">
+            <h5>ライフイベントについて</h5>
+          </div>
+          <div class="des-area">
+            <div class="single-contents">
+              <h6>教育資金</h6>
+              <p><%= @cost.edu_cost %>万円</p>
+            </div>
+            <div class="single-contents">
+              <h6>老後の生活費</h6>
+              <p><%= @cost.old_cost %>万円</p>
+            </div>
+            <div class="single-contents">
+              <h6>結婚費用</h6>
+              <p><%= @cost.marriage_cost %>万円</p>
+            </div>
+            <div class="single-contents">
+              <h6>住宅購入費</h6>
+              <p><%= @cost.myhome_cost %>万円</p>
+            </div>
+            <div class="single-contents">
+              <h6>その他の費用</h6>
+              <p><%= @cost.others %>万円</p>
+            </div>
+          </div>
+          <div class="bottun-area">
+            <%= link_to '⇨ 編集する', edit_cost_path(@cost.user_id), class: "btn-flat-border" %>
+          </div>
+        </div>
+        <div class="right-contents">
+          <div class="title-area text-left">
+            <h5>シミュレーション</h5>
+          </div>
+          <div class="des-area">
+            <div class="single-contents">
+              <h6>資産形成の目標金額</h6>
+              <p><%= @cost.target %>万円</p>
+            </div>
+            <div class="single-contents">
+              <h6>目標金額までの必要資金</h6>
+              <p><%= @per_year %>万円 / 1年、<%= @per_month %>万円 / 1ヶ月</p>
+            </div>
+            <div class="single-contents">
+              <p>シミュレーション結果の詳細を確認しましょう。</p>
+            </div>
+          </div>
+          <div class="bottun-area">
+            <%= link_to '⇨ 確認する', cal_path(@cal.user_id), class: "btn-flat-border" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

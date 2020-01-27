@@ -22,9 +22,9 @@
             <div class="bubble">
               <div class="form-group">
                 <%= f.label :結婚はしたいですか？, class: 'text-gray' %>
-                <%= f.radio_button :marriage, "1" %>する
-                <%= f.radio_button :marriage, "2" %>しない
-                <%= f.radio_button :marriage, "3" %>既婚
+                <%= f.radio_button :marriage, "する" %>する
+                <%= f.radio_button :marriage, "しない" %>しない
+                <%= f.radio_button :marriage, "した" %>既婚
               </div>
               <div class="form-group">
                 <%= f.label :何歳で結婚したいですか？, class: 'text-gray' %>
@@ -32,10 +32,10 @@
               </div>
               <div class="form-group">
                 <%= f.label :結婚式は挙げたいですか？, class: 'text-gray' %>
-                <%= f.radio_button :wedding, "1" %>友人・知人も呼んで盛大に！
-                <%= f.radio_button :wedding, "2" %>親族だけでアットホームに！
-                <%= f.radio_button :wedding, "3" %>2人だけで挙式！
-                <%= f.radio_button :wedding, "4" %>挙げない
+                <%= f.radio_button :wedding, "友人・知人も呼んで" %>友人・知人も呼ぶ
+                <%= f.radio_button :wedding, "親族だけで" %>親族だけで挙式
+                <%= f.radio_button :wedding, "2人だけで" %>2人だけで挙式
+                <%= f.radio_button :wedding, "しない" %>挙げない
               </div>
             </div>
           </div>
@@ -74,11 +74,11 @@
             <div class="bubble">
               <div class="form-group">
                 <%= f.label :住宅の購入予定はありますか？, class: 'text-gray' %>
-                <%= f.radio_button :myhome, "1" %>新築のマイホーム
-                <%= f.radio_button :myhome, "2" %>建売物件
-                <%= f.radio_button :myhome, "3" %>中古物件
-                <%= f.radio_button :myhome, "4" %>買わない
-                <%= f.radio_button :myhome, "5" %>わからない
+                <%= f.radio_button :myhome, "新築物件" %>新築物件
+                <%= f.radio_button :myhome, "建売物件" %>建売物件
+                <%= f.radio_button :myhome, "中古物件" %>中古物件
+                <%= f.radio_button :myhome, "買わない" %>買わない
+                <%= f.radio_button :myhome, "わからない" %>わからない
               </div>
               <div class="form-group">
                 <%= f.label :いつ購入しますか？, class: 'text-gray' %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_26_044805) do
+ActiveRecord::Schema.define(version: 2020_01_26_084954) do
 
   create_table "cals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -39,6 +39,16 @@ ActiveRecord::Schema.define(version: 2020_01_26_044805) do
     t.integer "graphs"
     t.integer "totals"
     t.integer "averages"
+    t.integer "a1"
+    t.integer "a2"
+    t.integer "a3"
+    t.integer "a4"
+    t.integer "a5"
+    t.integer "a6"
+    t.integer "a7"
+    t.integer "a8"
+    t.integer "a9"
+    t.integer "a10"
   end
 
   create_table "costs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

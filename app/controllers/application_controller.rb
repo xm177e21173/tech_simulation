@@ -10,6 +10,13 @@ class ApplicationController < ActionController::Base
     !current_user.nil?
   end
   
+  def set_info
+    @user = User.find(session[:user_id])
+    @plan = Plan.find_by(user_id: session[:user_id])
+    @cost = Cost.find_by(user_id: session[:user_id])
+    @cal  = Cal.find_by(user_id: session[:user_id])
+  end
+  
   helper_method :current_user, :logged_in?
   
   def after_sign_in_path_for(resource)

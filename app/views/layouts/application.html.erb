@@ -19,7 +19,7 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <% if logged_in? %>
-          <%= link_to user_path(:id) do %>
+          <%= link_to about_path do %>
             <span><%= image_tag "icons/logo.png", class: "navbar-brand" %></span>
           <% end %>
         <% else %>
@@ -31,11 +31,11 @@
           <% if logged_in? %>
             <li>
               <div class="tooltip-edituser">
-                <%= link_to edit_user_path(:id) do %>
+                <%= link_to user_path(:id) do %>
                   <%= image_tag "icons/mypage.png" %>
                 <% end %>
-                <div class="description-edituser">ユーザー情報の編集</div>
-                </div>
+                <div class="description-edituser">マイページ</div>
+              </div>
             </li>
             <li>
               <div class="tooltip-session">
