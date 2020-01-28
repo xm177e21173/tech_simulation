@@ -1122,7 +1122,7 @@ footer {
 }
 
 .graph-reference-bubble {
-  height: 430px;
+  height: 300px;
   position: relative;
   background: rgba(0,0,0,0.1);
   border-radius: 15px;
@@ -1130,8 +1130,8 @@ footer {
   box-sizing: border-box;
   text-align: center;
   padding: 20px 0 0 10px;
-  margin: 20px 30px 0 30px;
-  width: 75%;
+  margin: 20px 30px 0 50px;
+  width: 55%;
   
   .text-area {
     text-align: left;
@@ -1145,12 +1145,13 @@ footer {
   .single-column {
     float: left;
     display: inline-block;
-    height: 360px;
+    height: 230px;
     border: 1px solid rgba(0,0,0,0.2);
     background-color: white;
     margin: 0 0 0 20px;
-    width: 30%;
+    width: 45%;
     border-radius: 15px;
+    text-align: left;
     
     .title-area {
       height: 20px;
@@ -1163,6 +1164,10 @@ footer {
       h6 {
         margin: 0 0 0 0;
       }
+    }
+    
+    .des-area {
+      padding: 10px 15px 0 15px;
     }
   }
 }

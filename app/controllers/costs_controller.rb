@@ -7,8 +7,7 @@ class CostsController < ApplicationController
   end
   
   def edit
-    @cost = Cost.find(params[:id])
-    @plan = Plan.find_by(user_id:params[:id])
+    set_info
   end
   
   def update
