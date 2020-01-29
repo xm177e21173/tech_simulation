@@ -39,19 +39,47 @@
           <div class="des-area">
             <div class="single-contents">
               <h6>結婚</h6>
-              <p><%= @when_marriage %>結婚<%= @plan.marriage %>。挙式は<%= @plan.wedding %></p>
+              <% if @plan.marriage == "99" %>
+                <p>設定されていません。</p>
+              <% elsif @plan.marriage == "しない" %>
+                <p>しない</p>
+              <% elsif @plan.marriage == "未定" %>
+                <p>未定</p>
+              <% else %>
+                <p><%= @when_marriage %>結婚<%= @plan.marriage %>。挙式は<%= @plan.wedding %></p>
+              <% end %>
             </div>
             <div class="single-contents">
               <h6>こども</h6>
-              <p><%= @when_first_son %>から<%= @when_last_son %>までに<%= @plan.sons %>人</p>
+              <% if @plan.sons == 99 %>
+                <p>設定されていません。</p>
+              <% elsif @plan.sons == 0 %>
+                <p>つくらない。</p>
+              <% elsif @plan.sons == 7 %>
+                <p>未定</p>
+              <% else %>
+                <p><%= @when_first_son %>から<%= @when_last_son %>までに<%= @plan.sons %>人</p>
+              <% end %>
             </div>
             <div class="single-contents">
               <h6>すまい</h6>
-              <p><%= @when_myhome %>に<%= @plan.myhome %>を購入</p>
+              <% if @plan.myhome == "99" %>
+                <p>設定されていません。</p>
+              <% elsif @plan.myhome == "0" %>
+                <p>未定</p>
+              <% elsif @plan.myhome =="買わない" %>
+                <p>購入予定なし</p>
+              <% else %>
+                <p><%= @when_myhome %>に<%= @plan.myhome %>を購入</p>
+              <% end %>
             </div>
             <div class="single-contents">
               <h6>お金・その他</h6>
-              <p>貯金：<%= @plan.saving %>万円　退職金：<%= @plan.severance %>万円</p>
+              <% if @plan.updated_at == @plan.created_at %>
+                <p>設定されていません。</p>
+              <% else %>
+                <p>貯金：<%= @plan.saving %>万円　退職金：<%= @plan.severance %>万円</p>
+              <% end %>
             </div>
           </div>
           <div class="bottun-area">
@@ -65,23 +93,43 @@
           <div class="des-area">
             <div class="single-contents">
               <h6>教育資金</h6>
-              <p><%= @cost.edu_cost %>万円</p>
+              <% if @cost.updated_at == @cost.created_at %>
+                <p>設定されていません。</p>
+              <% else %>
+                <p><%= @cost.edu_cost %>万円</p>
+              <% end %>
             </div>
             <div class="single-contents">
               <h6>老後の生活費</h6>
-              <p><%= @cost.old_cost %>万円</p>
+              <% if @cost.updated_at == @cost.created_at %>
+                <p>設定されていません。</p>
+              <% else %>
+                <p><%= @cost.old_cost %>万円</p>
+              <% end %>
             </div>
             <div class="single-contents">
               <h6>結婚費用</h6>
-              <p><%= @cost.marriage_cost %>万円</p>
+              <% if @cost.updated_at == @cost.created_at %>
+                <p>設定されていません。</p>
+              <% else %>
+                <p><%= @cost.marriage_cost %>万円</p>
+              <% end %>
             </div>
             <div class="single-contents">
               <h6>住宅購入費</h6>
-              <p><%= @cost.myhome_cost %>万円</p>
+              <% if @cost.updated_at == @cost.created_at %>
+                <p>設定されていません。</p>
+              <% else %>
+                <p><%= @cost.myhome_cost %>万円</p>
+              <% end %>
             </div>
             <div class="single-contents">
               <h6>その他の費用</h6>
-              <p><%= @cost.others %>万円</p>
+              <% if @cost.updated_at == @cost.created_at %>
+                <p>設定されていません。</p>
+              <% else %>
+                <p><%= @cost.others %>万円</p>
+              <% end %>
             </div>
           </div>
           <div class="bottun-area">
@@ -106,7 +154,7 @@
             </div>
           </div>
           <div class="bottun-area">
-            <%= link_to '⇨ 確認する', cal_path(@cal.user_id), class: "btn-flat-border" %>
+            <%= link_to '⇨ 確認する', edit_cal_path(@cal.user_id), class: "btn-flat-border" %>
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@
         <div class="top-contents">
           <h3>教育資金</h3>
           <h2>約<span><%= @plan.sons*1050%></span>万円/<%= @plan.sons %>人</h2>
-          <p>子ども1人あたりの総額</p>
+          <p>子ども<%= @plan.sons %>人の総額</p>
           <p>（幼稚園から高校まで公立、</p>
           <p>大学のみ私立の場合）</p>
         </div>
@@ -141,7 +141,14 @@
           </div>
         </div>
       </div>
-      <%= f.submit "Simulate", class: "btn-block btn-gray" %>
+      <div class="row">
+        <div class="col-md-offset-2 col-md-4 text-center" >
+          <%= link_to 'Cancel', user_path(@plan.user_id), class: "btn-block btn-gray"%>
+        </div>
+        <div class="col-md-4">
+          <%= f.submit "Simulate", class: "btn-block btn-gray" %>
+        </div>
+      </div>
     </div>
     <% end %>
   </div>

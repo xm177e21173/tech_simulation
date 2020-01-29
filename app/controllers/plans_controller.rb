@@ -2,18 +2,19 @@ class PlansController < ApplicationController
   def new
     @user = User.find(session[:user_id])
     @plan = Plan.new(
-      marriage: "わからない",
-      sons: 0,
-      birth: 1990,
-      user_id: session[:user_id],
-      retirement: 0,
-      severance: 0,
-      when_marriage: 0,
-      wedding: "わからない",
-      first_son: 0,
-      last_son: 0,
-      myhome: "5",
-      when_myhome: 18,
+      user_id:       session[:user_id],
+      marriage:     "99",
+      when_marriage: 99,
+      wedding:      "99",
+      sons:          99,
+      first_son:     99,
+      last_son:      99,
+      myhome:       "99",
+      when_myhome:   99,
+      birth:         99,
+      retirement:    99,
+      saving:         0,
+      severance:      0,
       )
     @plan.save
     redirect_to new_cost_path
