@@ -32,11 +32,9 @@
                 <%= f.select :when_marriage,[["20~24", 1], ["25~29", 2], ["30~34", 3], ["35~39", 4], ["40~44", 5], ["45~49", 6], ["50~54", 7], ["55~59", 8],["60~64", 9], ["65~", 10], ["結婚しない", 0]], class: "form-control" %>
               </div>
               <div class="form-group">
-                <%= f.label :結婚式は挙げたいですか？, class: 'text-gray' %>
-                <%= f.radio_button :wedding, "友人も呼んで" %>友人・知人も呼ぶ
-                <%= f.radio_button :wedding, "親族だけで" %>親族だけで挙式
-                <%= f.radio_button :wedding, "2人だけで" %>2人だけで挙式
-                <%= f.radio_button :wedding, "しない" %>挙げない
+                <%= f.label :結婚式はしますか？, class: 'text-gray' %>
+                <%= f.radio_button :wedding, "する" %>する
+                <%= f.radio_button :wedding, "しない" %>しない
                 <%= f.radio_button :wedding, "未定" %>わからない
               </div>
             </div>
@@ -53,7 +51,7 @@
             <div class="bubble">
               <div class="form-group">
                 <%= f.label :子どもは何人ほしいですか？, class: 'text-gray' %>
-                <%= f.select :sons, [["つくらない",0], 1, 2, 3, 4, 5, 6, ["わからない", 7]], class: "form-control" %>
+                <%= f.select :sons, [1, 2, 3, 4, 5, 6, ["つくらない",0], ["わからない", 7] ], class: "form-control" %>
               </div>
               <div class="form-group">
                 <%= f.label :第一子はいつ欲しいですか？, class: 'text-gray' %>
@@ -76,10 +74,8 @@
             <div class="bubble">
               <div class="form-group">
                 <%= f.label :住宅の購入予定はありますか？, class: 'text-gray' %>
-                <%= f.radio_button :myhome, "新築物件" %>新築物件
-                <%= f.radio_button :myhome, "建売物件" %>建売物件
-                <%= f.radio_button :myhome, "中古物件" %>中古物件
-                <%= f.radio_button :myhome, "買わない" %>買わない
+                <%= f.radio_button :myhome, "買う" %>ある
+                <%= f.radio_button :myhome, "買わない" %>ない
                 <%= f.radio_button :myhome, "0" %>わからない
               </div>
               <div class="form-group">

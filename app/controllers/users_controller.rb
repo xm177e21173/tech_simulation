@@ -9,7 +9,8 @@ class UsersController < ApplicationController
     if @cost.target
       @today = Date.today
       @worktime = @plan.retirement - @today.year
-      @per_year = @cost.target / @worktime
+      @to_earn = @cost.target - @plan.saving - @plan.severance
+      @per_year = @to_earn / @worktime
       @per_month = @per_year / 12
     end
     

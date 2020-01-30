@@ -14,111 +14,242 @@
     <%= form_for @cost do |f| %>
     <div class="row">
       <div class="col-md-4 cost-edit-contents">
-        <div class="top-contents">
-          <h3>教育資金</h3>
-          <h2>約<span><%= @plan.sons*1050%></span>万円/<%= @plan.sons %>人</h2>
-          <p>子ども<%= @plan.sons %>人の総額</p>
-          <p>（幼稚園から高校まで公立、</p>
-          <p>大学のみ私立の場合）</p>
-        </div>
-        <div class="icon-img">
-          <%= image_tag 'icons/education.png' %>
-        </div>
-        <div class="middle-contents">
-          <div class="description">
-            <p>子どもを幼稚園から大学まで通わせるのにかかる費用は、
-               全て公立の場合で１人あたり約1,000万円、
-               全て私立の場合で約2,500万円が平均となっています。</p>
+        <!--こどもをつくらないときの表示-->
+        <% if @plan.sons == 0 || @plan.sons == 7 %>
+          <div class="text-thin"> 
+            <div class="top-contents">
+              <h3>教育資金</h3>
+              <h2>約<span>1050</span>万円/人</h2>
+              <p>子ども１人の教育費の総額</p>
+              <p>（幼稚園から高校まで公立、</p>
+              <p>大学のみ私立の場合）</p>
+            </div>
+            <div class="icon-img">
+              <%= image_tag 'icons/education.png' %>
+            </div>
+            <div class="middle-contents">
+              <div class="description">
+                <p>子どもを幼稚園から大学まで通わせるのにかかる費用は、
+                   全て公立の場合で１人あたり約1,000万円、
+                   全て私立の場合で約2,500万円が平均となっています。</p>
+              </div>
+              <div class="input">
+                <%= f.label :教育資金を設定してください。 %>
+                <%= f.number_field :edu_cost, class: 'form-edit' %>万円
+              </div>
+            </div>
           </div>
-          <div class="input">
-            <%= f.label :教育資金を設定してください。 %>
-            <%= f.number_field :edu_cost, class: 'form-edit' %>万円
+        <!--こどもをつくるときの表示-->
+        <% else %>
+          <div class="top-contents">
+            <h3>教育資金</h3>
+            <h2>約<span><%= @plan.sons*1050%></span>万円/<%= @plan.sons %>人</h2>
+            <p>子ども<%= @plan.sons %>人の総額</p>
+            <p>（幼稚園から高校まで公立、</p>
+            <p>大学のみ私立の場合）</p>
           </div>
-        </div>
+          <div class="icon-img">
+            <%= image_tag 'icons/education.png' %>
+          </div>
+          <div class="middle-contents">
+            <div class="description">
+              <p>子どもを幼稚園から大学まで通わせるのにかかる費用は、
+                 全て公立の場合で１人あたり約1,000万円、
+                 全て私立の場合で約2,500万円が平均となっています。</p>
+            </div>
+            <div class="input">
+              <%= f.label :教育資金を設定してください。 %>
+              <%= f.number_field :edu_cost, class: 'form-edit' %>万円
+            </div>
+          </div>
+        <% end %>
       </div>
     
       <div class="col-md-4 cost-edit-contents">
-        <div class="top-contents">
-          <h3>老後の生活費</h3>
-          <h2>約<span>1680</span>万円</h2>
-          <p>高齢夫婦無職世帯が</p>
-          <p>老後20年間生活するとき</p>
-          <p>自己負担することになる費用</p>
-        </div>
-        <div class="icon-img">
-          <%= image_tag 'icons/old.png' %>
-        </div>
-        <div class="middle-contents">
-          <div class="description">
-            <p>65際以上の夫婦が不自由のない生活を送るのにかかる一ヶ月の費用の平均は24万円、
-            生活に一定のゆとりをもちたい場合35万円です。
-            年金の平均受給額である17万円との差額が貯蓄すべき金額となります</p>
+        <!--結婚しない場合の表示-->
+        <% if @plan.marriage == "しない" %>
+          <div class="top-contents">
+            <h3>老後の生活費</h3>
+            <h2>約<span>960</span>万円</h2>
+            <p>無職の単身高齢者が</p>
+            <p>老後20年間生活するとき</p>
+            <p>自己負担することになる費用</p>
           </div>
-          <div class="input">
-            <%= f.label :老後の生活費を設定してください。 %>
-            <%= f.number_field :old_cost, class: 'form-edit'%>万円
+          <div class="icon-img">
+            <%= image_tag 'icons/old.png' %>
           </div>
-        </div>
+          <div class="middle-contents">
+            <div class="description">
+              <p>65際以上の単身者が不自由のない生活を送るのにかかる一ヶ月の費用の平均は18万円、
+              生活に一定のゆとりをもちたい場合25万円です。
+              年金の平均受給額である14万円との差額が貯蓄すべき金額となります</p>
+            </div>
+            <div class="input">
+              <%= f.label :老後の生活費を設定してください。 %>
+              <%= f.number_field :old_cost, class: 'form-edit'%>万円
+            </div>
+          </div>
+        <!--結婚する場合の表示-->
+        <% else %>
+          <div class="top-contents">
+            <h3>老後の生活費</h3>
+            <h2>約<span>1680</span>万円</h2>
+            <p>高齢夫婦無職世帯が</p>
+            <p>老後20年間生活するとき</p>
+            <p>自己負担することになる費用</p>
+          </div>
+          <div class="icon-img">
+            <%= image_tag 'icons/old.png' %>
+          </div>
+          <div class="middle-contents">
+            <div class="description">
+              <p>65際以上の夫婦が不自由のない生活を送るのにかかる一ヶ月の費用の平均は24万円、
+              生活に一定のゆとりをもちたい場合35万円です。
+              年金の平均受給額である17万円との差額が貯蓄すべき金額となります</p>
+            </div>
+            <div class="input">
+              <%= f.label :老後の生活費を設定してください。 %>
+              <%= f.number_field :old_cost, class: 'form-edit'%>万円
+            </div>
+          </div>
+        <% end %>
       </div>
     
       <div class="col-md-4 cost-edit-contents-right">
         <div class="contents-row">
-          <div class="bubble">
-            <div class="left-contents" >
-              <h5>結婚費用</h5>
-              <h5>約<span>467</span>万円</h5>
+          <% if @plan.wedding == "しない" %>
+            <div class="bubble">
+              <div class="left-contents" >
+                <h5>結婚費用</h5>
+                <h5>約<span>120</span>万円</h5>
+              </div>
+              <div class="right-contents">
+                <p>結婚式以外にも結婚には出費が伴います。</p>
+                <p>結納、指輪、新婚旅行。左はその平均費用です。</p>
+              </div>
             </div>
-            <div class="right-contents">
-              <p>結納・婚約～新婚旅行</p>
-              <p>までにかかった費用総額</p>
+            <div class="bottom-contents">
+              <div class="icon-img">
+                <%= image_tag 'icons/marriage.png' %>
+              </div>
+              <div class="input">
+                  <%= f.label :結婚費用を設定してください。 %>
+                  <%= f.text_field :marriage_cost, class: "form" %>万円
+              </div>
             </div>
-          </div>
-          <div class="bottom-contents">
-            <div class="icon-img">
-              <%= image_tag 'icons/marriage.png' %>
+          <% else %>
+            <div class="bubble">
+              <div class="left-contents" >
+                <h5>結婚費用</h5>
+                <h5>約<span>230</span>万円</h5>
+              </div>
+              <div class="right-contents">
+                <p>結納・婚約～新婚旅行までに</p>
+                <p>かかった費用総額</p>
+                <p>(お祝儀は差し引いて計算しています。)</p>
+              </div>
             </div>
-            <div class="input">
-                <%= f.label :結婚費用を設定してください。 %>
-                <%= f.text_field :marriage_cost, class: "form" %>万円
+            <div class="bottom-contents">
+              <div class="icon-img">
+                <%= image_tag 'icons/marriage.png' %>
+              </div>
+              <div class="input">
+                  <%= f.label :結婚費用を設定してください。 %>
+                  <%= f.text_field :marriage_cost, class: "form" %>万円
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
         
         <div class="contents-row">
-          <div class="bubble">
-            <div class="left-contents" >
-              <h5>住宅購入費用</h5>
-              <h5>約<span>3340</span>万円</h5>
+          <% if @plan.myhome == "買わない" %>
+            <div class="text-thin">
+              <div class="bubble">
+                <div class="left-contents" >
+                  <h5>住宅購入費用</h5>
+                  <h5>約<span>3340</span>万円</h5>
+                </div>
+                <div class="right-contents">
+                  <p>住宅の平均購入価格で</p>
+                  <p>マンションは4350万円</p>
+                  <p>建売住宅は約3340万円</p>
+                </div>
+              </div>
+              <div class="bottom-contents">
+                <div class="icon-img">
+                  <%= image_tag 'icons/house.png' %>
+                </div>
+                <div class="input">
+                  <%= f.label :住宅購入費を設定してください。 %>
+                  <%= f.text_field :myhome_cost, class: "form" %>万円
+                </div>
+              </div>
             </div>
-            <div class="right-contents">
-              <p>住宅の平均購入価格で</p>
-              <p>建売住宅は約3340万円</p>
+          <% else %>
+            <div class="bubble">
+              <div class="left-contents" >
+                <h5>住宅購入費用</h5>
+                <h5>約<span>3340</span>万円</h5>
+              </div>
+              <div class="right-contents">
+                <p>住宅の平均購入価格で</p>
+                <p>マンションは4350万円</p>
+                <p>建売住宅は約3340万円</p>
+              </div>
             </div>
+            <div class="bottom-contents">
+              <div class="icon-img">
+                <%= image_tag 'icons/house.png' %>
+              </div>
+              <div class="input">
+                <%= f.label :住宅購入費を設定してください。 %>
+                <%= f.text_field :myhome_cost, class: "form" %>万円
+              </div>
+            </div>
+          <% end %>
           </div>
-          <div class="bottom-contents">
-            <div class="icon-img">
-              <%= image_tag 'icons/house.png' %>
-            </div>
-            <div class="input">
-              <%= f.label :住宅購入費を設定してください。 %>
-              <%= f.text_field :myhome_cost, class: "form" %>万円
-            </div>
-          </div>
-        </div>
         <div class="top-row">
           <div class="bottom">
             <div class="single-column-img">
-              <div class="single-column">
-                <h5>出産費用</h5>
-                <h5>約<span><%= @plan.sons*50 %></span>万円/<%= @plan.sons %>人</h5>
-                <p>出産費用の総額</p>
-                <p>（入院料・室料差額・</p>
-                <p>分娩料・検査・薬剤料・</p>
-                <p>処置・その他）</p>
-              </div>
-              <div class="icon-img">
-                <%= image_tag 'icons/baby.png' %>
-              </div>
+              <% if @plan.sons == 0 %>
+                <div class="text-thin">
+                  <div class="single-column">
+                    <h5>出産費用</h5>
+                    <h5>約<span>50</span>万円/人</h5>
+                    <p>出産費用の総額</p>
+                    <p>（入院料・室料差額・</p>
+                    <p>分娩料・検査・薬剤料・</p>
+                    <p>処置・その他）</p>
+                  </div>
+                  <div class="icon-img">
+                    <%= image_tag 'icons/baby.png' %>
+                  </div>
+                </div>
+              <% elsif @plan.sons == 7 %>
+                <div class="single-column">
+                  <h5>出産費用</h5>
+                  <h5>約<span>50</span>万円/人</h5>
+                  <p>出産費用の総額</p>
+                  <p>（入院料・室料差額・</p>
+                  <p>分娩料・検査・薬剤料・</p>
+                  <p>処置・その他）</p>
+                </div>
+                <div class="icon-img">
+                  <%= image_tag 'icons/baby.png' %>
+                </div>
+              <% else %>
+                <div class="single-column">
+                  <h5>出産費用</h5>
+                  <h5>約<span><%= @plan.sons*50 %></span>万円/<%= @plan.sons %>人</h5>
+                  <p>出産費用の総額</p>
+                  <p>（入院料・室料差額・</p>
+                  <p>分娩料・検査・薬剤料・</p>
+                  <p>処置・その他）</p>
+                </div>
+                <div class="icon-img">
+                  <%= image_tag 'icons/baby.png' %>
+                </div>
+              <% end %>
             </div>
             <div class="single-column-img">
               <div class="single-column">
