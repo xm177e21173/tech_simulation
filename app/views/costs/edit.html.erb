@@ -15,8 +15,31 @@
     <div class="row">
       <div class="col-md-4 cost-edit-contents">
         <!--こどもをつくらないときの表示-->
-        <% if @plan.sons == 0 || @plan.sons == 7 %>
+        <% if @plan.sons == 0 %>
           <div class="text-thin"> 
+            <div class="top-contents">
+              <h3>教育資金</h3>
+              <h2>約<span>1050</span>万円/人</h2>
+              <p>子ども１人の教育費の総額</p>
+              <p>（幼稚園から高校まで公立、</p>
+              <p>大学のみ私立の場合）</p>
+            </div>
+            <div class="icon-img">
+              <%= image_tag 'icons/education-thin.png' %>
+            </div>
+            <div class="middle-contents">
+              <div class="description">
+                <p>子どもを幼稚園から大学まで通わせるのにかかる費用は、
+                   全て公立の場合で１人あたり約1,000万円、
+                   全て私立の場合で約2,500万円が平均となっています。</p>
+              </div>
+              <div class="input">
+                <%= f.label :教育資金を設定してください。 %>
+                <%= f.number_field :edu_cost, class: 'form-edit' %>万円
+              </div>
+            </div>
+          </div>
+          <% elsif @plan.sons == 7 %>
             <div class="top-contents">
               <h3>教育資金</h3>
               <h2>約<span>1050</span>万円/人</h2>
@@ -38,7 +61,6 @@
                 <%= f.number_field :edu_cost, class: 'form-edit' %>万円
               </div>
             </div>
-          </div>
         <!--こどもをつくるときの表示-->
         <% else %>
           <div class="top-contents">
@@ -117,7 +139,32 @@
     
       <div class="col-md-4 cost-edit-contents-right">
         <div class="contents-row">
-          <% if @plan.wedding == "しない" %>
+          <!--結婚しないときの表示-->
+          <% if @plan.marriage == "しない" %>
+            <div class="text-thin">
+              <div class="bubble">
+                <div class="left-contents" >
+                  <h5>結婚費用</h5>
+                  <h5>約<span>230</span>万円</h5>
+                </div>
+                <div class="right-contents">
+                  <p>結納・婚約～新婚旅行までに</p>
+                  <p>かかった費用総額</p>
+                  <p>(お祝儀は差し引いて計算しています。)</p>
+                </div>
+              </div>
+              <div class="bottom-contents">
+                <div class="icon-img">
+                  <%= image_tag 'icons/marriage-thin.png' %>
+                </div>
+                <div class="input">
+                    <%= f.label :結婚費用を設定してください。 %>
+                    <%= f.text_field :marriage_cost, class: "form" %>万円
+                </div>
+              </div>
+            </div>
+          <!--結婚式をあげない時の表示-->
+          <% elsif @plan.wedding == "しない" %>
             <div class="bubble">
               <div class="left-contents" >
                 <h5>結婚費用</h5>
@@ -177,7 +224,7 @@
               </div>
               <div class="bottom-contents">
                 <div class="icon-img">
-                  <%= image_tag 'icons/house.png' %>
+                  <%= image_tag 'icons/house-thin.png' %>
                 </div>
                 <div class="input">
                   <%= f.label :住宅購入費を設定してください。 %>
@@ -222,7 +269,7 @@
                     <p>処置・その他）</p>
                   </div>
                   <div class="icon-img">
-                    <%= image_tag 'icons/baby.png' %>
+                    <%= image_tag 'icons/baby-thin.png' %>
                   </div>
                 </div>
               <% elsif @plan.sons == 7 %>
