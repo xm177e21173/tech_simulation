@@ -30,8 +30,8 @@ class CalsController < ApplicationController
   end
   
   private
+  # 教育資金の割り振り
   def edu_cost_simulate
-    # 教育資金の割り振り
     i = @plan.first_son
     j = @plan.last_son + 5
     

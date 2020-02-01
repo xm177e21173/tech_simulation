@@ -1,3 +1,139 @@
-// Place all the styles related to the cals controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.cal-show-wrapper {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  background-color: #fafafa;
+  
+  .submit {
+    margin-bottom: 20px;
+  }
+}
+
+.cal-title {
+  background: linear-gradient(to right, rgba(0,0,0,0.2), white);
+  position: relative;
+  height: 250px;
+  margin: 20px 0 20px 0;
+  
+  .left-contents {
+    padding: 20px 0 0 20px;
+    
+    h1 {
+      margin-bottom: 15px;
+    }
+    
+    p {
+      margin-left: 20px;
+    }
+  }
+  
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 250px;
+  }
+}
+
+.graph-title {
+  padding: 0 0 0 30px;
+}
+
+.graph {
+  padding: 0 0 0 0;
+}
+
+.graph-description {
+  padding: 0;
+  
+  .right-contents {
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 10px;
+    margin-bottom: 5px;
+    
+    .title-area {
+      height: 20px;
+      background-color: rgba(0,0,0,0.2);
+      padding: 4px 0 0 0;
+      border-bottom: 1px solid rgba(0,0,0,0.3);
+      border-radius: 10px 10px 0 0;
+    }
+    
+    .des {
+      padding-top: 8px;
+      
+      .des-area {
+        margin: 0 0 8px 0 ;
+      }
+    }
+    
+    h6 {
+        margin: 0 0 0 15px;
+      }
+      
+      p {
+        margin: 3px 0 0 20px;
+        font-size: 12px;
+      }
+  }
+}
+
+.graph-reference-bubble {
+  position: relative;
+  background: rgba(0,0,0,0.1);
+  border-radius: 15px;
+  box-sizing: border-box;
+  width: 70%;
+  padding: 20px 0 0 0;
+  
+  .text-area {
+    text-align: left;
+    padding-left: 30px;
+    
+    h4 {
+      margin: 0 0 10px 20px;
+    }
+  }
+  
+  .single-column {
+    float: left;
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,0.2);
+    background-color: white;
+    border-radius: 15px;
+    text-align: left;
+    margin-bottom: 20px;
+    padding-top: 5px;
+    
+    .title-area {
+      height: 20px;
+      background-color: rgba(0,0,0,0.2);
+      border-bottom: 1px solid rgba(0,0,0,0.3);
+      border-radius: 10px 10px 10px 10px;
+      text-align: center;
+      padding-top: 4px;
+      
+      h6 {
+        margin: 0 0 0 0;
+      }
+    }
+    
+    .des-area {
+      padding: 10px 15px 0 15px;
+    }
+  }
+}
+
+.graph-reference-bubble::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  border-style: solid;
+  border-width: 0px 20px 20px 20px;
+  border-color: transparent transparent rgba(0,0,0,0.1) transparent;
+}

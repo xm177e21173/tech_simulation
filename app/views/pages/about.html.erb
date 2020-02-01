@@ -1,4 +1,4 @@
-<div class="user-show-wrapper">
+<div class="index-wrapper">
   <div class="user-show-top">
     <%= image_tag 'user-show-top.jpeg', class: "bg-img" %>
     <h1>
@@ -7,8 +7,7 @@
     <p class="des1">Tech Simulationはあなたの資産形成をサポートするシミュレーションサービスです。</p>
     <p class="des2">計画的な資産形成に向けて、手順に従いシミュレーションしていきましょう。</p>
   </div>
-  <div class="space">
-  </div>
+  <div class="space"></div>
   <div class="container">
    <div class="background-shadow-1">
      <div class="row">
@@ -50,4 +49,14 @@
        </div>
      </div>
    </div>
+   <div class="bottun-row">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-4">
+        <%= link_to 'マイページ', user_path(session[:user_id]), class: 'btn-block btn-about' %>
+      </div>
+      <div class="col-md-4">
+        <%= link_to 'ログアウト', logout_path, class: 'btn-block btn-about', method: :delete %>
+      </div>
+    </div>
+  </div>
 </div>

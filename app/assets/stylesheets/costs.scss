@@ -1,3 +1,245 @@
-// Place all the styles related to the costs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.cost-wrapper {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  background-color: #fafafa;
+  
+  .submit {
+    margin-bottom: 20px;
+  }
+}
+
+.cost-title {
+  background: linear-gradient(to right, rgba(0,0,0,0.2), white);
+  position: relative;
+  height: 250px;
+  margin: 20px 0 50px 0;
+  
+  .left-contents {
+    padding: 20px 0 0 20px;
+    
+    h1 {
+      margin-bottom: 15px;
+    }
+    
+    p {
+      margin-left: 20px;
+    }
+  }
+  
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 250px;
+  }
+}
+
+.cost-edit-contents {
+  height: 800px;
+  position: relative;
+  margin-bottom: 50px;
+  
+  .top-contents {
+    position: relative;
+    height: 400px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 20px;
+    margin: 0 5px 0 5px;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 75px;
+    
+    h3 {
+      margin: 0 0 40px 0;
+    }
+    
+    h2 {
+      margin: 0 0 40px 0;
+      
+      span {
+        font-size: 40px;
+        font-weight: bold;
+      }
+    }
+  }
+  
+  .top-contents::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -16px;
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 16px 8px 0 8px;
+    border-color: rgba(0,0,0,0.1) transparent transparent transparent;
+  }
+  
+  .icon-img {
+    width: 100%;
+    text-align: center;
+    margin: 40px 0 40px 0; 
+    
+    img {
+      height: 100px;
+    }
+  }
+  
+  .input {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+  }
+}
+
+.cost-edit-contents-right {
+  height: 800px;
+  position: relative;
+  margin-bottom: 50px;
+  
+  .contents-row {
+    
+    .bubble {
+      position: relative;
+      height: 100px;
+      background: rgba(0,0,0,0.1);
+      border-radius: 15px;
+      margin: 0 5px 20px 5px;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 20px 5px 0 5px;
+      
+      .left-contents {
+        display: inline-block;
+        width: 40%;
+      }
+      
+      .right-contents {
+        display: inline-block;
+        width: 55%;
+      }
+      
+      h5 {
+        span {
+          font-weight: bold;
+          font-size: 20px;
+        }
+      }
+      
+      p {
+        font-size: 10px;
+        margin: 0 0 5px 0;
+      }
+    }
+    
+    .bubble::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -10px;
+      display: block;
+      width: 0;
+      height: 0;
+      margin: 0 auto;
+      border-style: solid;
+      border-width: 10px 8px 0 8px;
+      border-color: rgba(0,0,0,0.1) transparent transparent transparent;
+    }
+    
+    .bottom-contents {
+      height: 100px;
+      
+      .icon-img {
+        display: inline-block;
+        text-align: center;
+        width: 30%;
+        height: 100%;
+        
+        img {
+          height: 60px;
+        }
+      }
+      
+      .input {
+        display: inline-block;
+        text-align: center;
+        width: 65%;
+        font-size: 11px
+      }
+    }
+  }
+  
+  .others {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+  }
+}
+
+.top-row {
+  background: transparent;
+  width: 100%;
+  
+  .bottom {
+    height : 300px;
+  }
+  
+  
+  .single-column-img {
+    height: 100%;
+    width: 45%;
+    display: inline-block;
+    
+    .single-column {
+      position: relative;
+      height: 180px;
+      background: rgba(0,0,0,0.1);
+      border-radius: 15px;
+      margin: 0 5px 0 5px;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 20px 5px 0 5px;
+      
+      h5 {
+        span {
+          font-weight: bold;
+          font-size: 20px;
+        }
+      }
+      
+      p {
+        font-size: 10px;
+        margin: 0 0 5px 0;
+      }
+    }
+    
+    
+    .single-column::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -10px;
+      display: block;
+      width: 0;
+      height: 0;
+      margin: 0 auto;
+      border-style: solid;
+      border-width: 10px 8px 0 8px;
+      border-color: rgba(0,0,0,0.1) transparent transparent transparent;
+    }
+    
+    .icon-img {
+      text-align: center;
+      margin: 20px 0 40px 0; 
+  
+      img {
+        height: 70px;
+      }
+    }
+  }
+}

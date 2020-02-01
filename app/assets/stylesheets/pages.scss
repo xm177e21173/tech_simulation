@@ -1,3 +1,114 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.index-wrapper {
+  padding-top: 71px;
+  background-color: #fafafa;
+  
+  h1 {
+    margin-bottom: 30px;
+  }
+}
+
+.user-show-top {
+  width: 100vw;
+  position: relative;
+  margin-bottom: 0;
+  
+  img {
+    width: 100%;
+  }
+  
+  h1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .des1 {
+    position: absolute;
+    top: 150px;
+    left: 20px;
+  }
+  
+  .des2 {
+    position: absolute;
+    top: 200px;
+    left: 20px;
+  }
+}
+
+.top-bottun-row {
+  width: 100%;
+  background-color: rgba(0,0,0,0.8);
+  height: 100px;
+  padding-top: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.right-des {
+  height: 250px;
+  padding-left: 30px;
+  position: relative;
+  
+  h3 {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+  
+  h4 {
+    margin-left: 10px;
+    color: black;
+  }
+
+  .target{
+    font-size: 24px;
+  }
+}
+
+.background-shadow-1 {
+  background: linear-gradient(to right, rgba(0,0,0,0.2), white);
+  margin-bottom: 30px;
+  
+  img {
+    height: 250px;
+    width: 100%;
+  }
+}
+
+.background-shadow-2 {
+  background: linear-gradient(to left, rgba(0,0,0,0.2), white);
+  margin-bottom: 30px;
+  
+  img {
+    height: 250px;
+    width: 100%;
+  }
+}
+
+.left-des {
+  position: relative;
+  
+  h3 {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+}
+
+.bottom-bottun-row {
+  width: 100%;
+  background-color: rgba(0,0,0,0.8);
+  height: 100px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.space {
+  height: 30px;
+} 

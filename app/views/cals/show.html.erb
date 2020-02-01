@@ -1,5 +1,5 @@
-<div class="info-edit-wrapper">
-  <div class="cost-edit-title">
+<div class="cal-show-wrapper">
+  <div class="cal-title">
     <div class="left-contents">
       <h1>資産形成の目標をたてる</h1>
       <p>ここに説明文が入る</p>
@@ -10,12 +10,12 @@
     </div>
   </div>
   
-  <div class"container">
-    <div class"graph-title">
+  <div class="container">
+    <div class="graph-title">
       <h2>シミュレーショングラフ</h2>
     </div>
     <div class="row">
-      <div class="col-md-8 graph">
+      <div class="col-md-9 graph">
         
         <canvas id="myChart"></canvas>
        
@@ -158,46 +158,50 @@
           });
         </script>
       </div>
-      <div class="col-md-4 graph-description">
+      <div class="col-md-3 graph-description">
         <div class="right-contents">
           <div class="title-area">
             <h6>グラフについて</h6>
           </div>
-          <div class="des-area">
-            <h6>想定される費用(万円/年 - 左の縦軸)：</h6>
-            <p>各年齢帯で拠出が想定される費用</p>
-          </div>
-          <div class="des-area">
-            <h6>累積費用(万円 - 右の縦軸)：</h6>
-            <p>各年齢帯における『想定される費用』の累積額</p>
-          </div>
-          <div class="des-area">
-            <h6>目標資産額への平均(万円 - 右の縦軸)：</h6>
-            <p>65歳時点で目標資産額に到達するときの各年帯帯での貯蓄額</p>
+          <div class="des">
+            <div class="des-area">
+              <h6>想定される費用(左の縦軸)：</h6>
+              <p>各年齢帯で拠出が想定される費用</p>
+            </div>
+            <div class="des-area">
+              <h6>累積費用(右の縦軸)：</h6>
+              <p>各年齢帯における『想定される費用』の累積額</p>
+            </div>
+            <div class="des-area">
+              <h6>目標資産額への平均(右の縦軸)：</h6>
+              <p>65歳時点で目標資産額に到達するときの各年帯帯での貯蓄額</p>
+            </div>
           </div>
         </div>
-        <div class="space"></div>
         <div class="right-contents">
           <div class="title-area">
             <h6>シミュレーションにおける留意点</h6>
           </div>
-          <div class="des-area">
-            <h6>教育費：</h6>
-            <p>教育費の総額を、第一子の誕生から末子の大学卒業までの期間で平均しています。</p>
-          </div>
-          <div class="des-area">
-            <h6>住宅購入費：</h6>
-            <p>35年ローンでの完済を想定してシミュレーションしています。</p>
+          <div class="des">
+            <div class="des-area">
+              <h6>教育費：</h6>
+              <p>教育費の総額を、第一子の誕生から末子の大学卒業までの期間で平均しています。</p>
+            </div>
+            <div class="des-area">
+              <h6>住宅購入費：</h6>
+              <p>35年ローンでの完済を想定してシミュレーションしています。</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div> 
+  
   <div class="graph-reference-bubble">
     <div class="text-area">
       <h4>シミュレーションのチェックポイント</h4>
     </div>
-    <div class="single-column">
+    <div class="row">
+    <div class="single-column col-md-offset-1 col-md-4">
       <div class="title-area">
         <h6>想定される費用</h6>
       </div>
@@ -206,7 +210,7 @@
         <p>逆にいえば、この数値が小さい期間に極力資産形成を行うべきです。</p>
       </div>
     </div>
-    <div class="single-column">
+    <div class="single-column col-md-offset-1 col-md-5">
       <div class="title-area">
         <h6>累積費用と目標資産額への平均</h6>
       </div>
@@ -217,5 +221,7 @@
         緑のグラフが上にある間は資産が増えていき、赤のグラフが上にある間は資産を切り崩していくことになります。</p>
       </div>
     </div>
+    </div>
+  </div>
   </div>
 </div>

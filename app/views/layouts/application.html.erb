@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TechSimulation</title>
+    <title>Tech Simulation</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
@@ -30,11 +30,11 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li>
-              <div class="tooltip-edituser">
+              <div class="tooltip-mypage">
                 <%= link_to user_path(:id) do %>
                   <%= image_tag "icons/mypage.png" %>
                 <% end %>
-                <div class="description-edituser">マイページ</div>
+                <div class="description-mypage">マイページ</div>
               </div>
             </li>
             <li>

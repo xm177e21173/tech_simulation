@@ -5,5 +5,5 @@ class Cost < ApplicationRecord
   validates :target,        presence: true
   validates :marriage_cost, presence: true
   validates :myhome_cost,   presence: true
-  validates :othres,        presence: true
+  validates :others,        presence: true
 end
