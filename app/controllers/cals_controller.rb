@@ -8,36 +8,34 @@ class CalsController < ApplicationController
   
   def edit
     set_info
-    
     edu_cost_simulate
     old_cost_simulate
     myhome_cost_simulate
     marriage_cost_simulate
     total_cost_set
     average_cost_set
-    
     @cal.save
     redirect_to cal_path(@cal.user_id)
   end
   
   def show
     set_info
-    
-    @to_save_target = @cost.target - @plan.severance
-    @graph_upper_1 = @to_save_target / 1000
-    @graph_upper = @graph_upper_1 + 1
-  
+    set_graph_upper
   end
   
   private
   # 教育資金の割り振り
   def edu_cost_simulate
     i = @plan.first_son
+    # 末子誕生の20~24年後（大学卒業）
     j = @plan.last_son + 5
     
+    # 第一子誕生から末子大学卒業までの年数
     edu_span = j - i + 1
+    # 教育費の平均
     s_edu_cost = @cost.edu_cost / edu_span
     
+    # 教育費の平均を該当の期間に割振り
     if i <= 1 && 1 <= j
       @cal.g1 = s_edu_cost
     else
@@ -88,6 +86,8 @@ class CalsController < ApplicationController
     else
       @cal.g10 = 0
     end
+    
+    # 65歳までに末子が大学を卒業しなかった場合の教育費の余りの加算
     if j >= 11
       n = j - 10
       n_edu_cost = s_edu_cost * n
@@ -95,15 +95,20 @@ class CalsController < ApplicationController
     end
   end
   
+  # 老後の生活費の割振り
   def old_cost_simulate
     @cal.g10 += @cost.old_cost
   end
   
+  # 住宅購入費の割振り
   def myhome_cost_simulate
     i = @plan.when_myhome
+    # 住宅購入の35年後
     j = i + 6
+    # 住宅購入費の平均値
     s_myhome_cost = @cost.myhome_cost / 7
     
+    # 住宅購入費の平均値を該当の期間に割振り
     if i <= 1 && 1 <= j
       @cal.g1 += s_myhome_cost
     end
@@ -134,6 +139,8 @@ class CalsController < ApplicationController
     if i <= 10 && 10 <= j
       @cal.g10 += s_myhome_cost
     end
+    
+    # ローン返済が65歳までに完了しなかった場合の住宅購入費の余りの加算
     if j >= 11
       n = j - 10
       n_myhome_cost = s_myhome_cost * n
@@ -141,7 +148,9 @@ class CalsController < ApplicationController
     end
   end
   
+  # 結婚費用の割り振り
   def marriage_cost_simulate
+    # 該当の期間に結婚費用を割振り
     if @plan.when_marriage == 1
       @cal.g1 += @cost.marriage_cost
     end
@@ -174,6 +183,7 @@ class CalsController < ApplicationController
     end
   end
   
+  # 累積費用を計算
   def total_cost_set
     @cal.t1 = @cal.g1
     @cal.t2 = @cal.t1 + @cal.g2
@@ -184,9 +194,11 @@ class CalsController < ApplicationController
     @cal.t7 = @cal.t6 + @cal.g7
     @cal.t8 = @cal.t7 + @cal.g8
     @cal.t9 = @cal.t8 + @cal.g9
+    # 退職金を減算
     @cal.t10 = @cal.t9 + @cal.g10 - @plan.severance
   end
   
+  # 資産形成の目標ペースの計算
   def average_cost_set
     to_save = @cost.target - @plan.saving - @plan.severance
     single_to_save = to_save / 9
@@ -202,4 +214,10 @@ class CalsController < ApplicationController
     @cal.a10 = @cal.a9 + single_to_save
   end
   
+  # グラフ左側Y軸の上限値の設定
+  def set_graph_upper
+    @to_save_target = @cost.target - @plan.severance
+    @graph_upper_1 = @to_save_target / 1000
+    @graph_upper = @graph_upper_1 + 1
+  end
 end

@@ -13,6 +13,10 @@
             <%= f.text_field :email, class: "form-control" %>
           </div>
           <div class="form-group">
+            <%= f.label :画像, class: 'text-gray' %>
+            <%= f.file_field :image_name, class: "form-control" %>
+          </div>
+          <div class="form-group">
             <%= f.label :パスワード, class: 'text-gray' %>
             <%= f.label :※半角英数字８文字以上, class: 'text-gray' %>
             <%= f.password_field :password, class: "form-control" %>
@@ -21,7 +25,7 @@
             <%= f.label :パスワードをもう一度ご入力ください, class: 'text-gray' %>
             <%= f.password_field :password_confirmation, class: "form-control" %>
           </div>
-          <%= f.submit "登録", class: "btn-block btn-gray" %>
+          <%= f.submit "編集", class: "btn-block btn-gray" %>
         <% end %>
       </div>
     </div>

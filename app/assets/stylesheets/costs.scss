@@ -18,7 +18,7 @@
     padding: 20px 0 0 20px;
     
     h1 {
-      margin-bottom: 15px;
+      margin-bottom: 25px;
     }
     
     p {
@@ -151,7 +151,7 @@
     }
     
     .bottom-contents {
-      height: 100px;
+      height: 90px;
       
       .icon-img {
         display: inline-block;
@@ -242,4 +242,13 @@
       }
     }
   }
+}
+
+.form-small {
+  height: 30px;
+  width: 100px;
+}
+
+.input {
+
 }

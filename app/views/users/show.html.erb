@@ -11,7 +11,7 @@
           </div>
           <div class="contents-area">
             <div class="icon-area">
-              <%= image_tag "icons/icon.png" %>
+                <%= image_tag @user.image_name.url %>
             </div>
             <div class="single-contents">
               <h6>ユーザー名</h6>
@@ -37,49 +37,69 @@
             <h5>人生設計について</h5>
           </div>
           <div class="des-area">
-            <div class="single-contents">
-              <h6>結婚</h6>
-              <% if @plan.marriage == "99" %>
-                <p>設定されていません。</p>
-              <% elsif @plan.marriage == "しない" %>
-                <p>しない</p>
-              <% elsif @plan.marriage == "未定" %>
-                <p>未定</p>
-              <% else %>
-                <p><%= @when_marriage %>結婚<%= @plan.marriage %>。挙式は<%= @plan.wedding %></p>
-              <% end %>
+            <div class="single-contents-plan">
+              <div class="icon">
+                <%= image_tag 'icons/marriage.png' %>
+              </div>
+              <div class="contents">
+                <h6>結婚</h6>
+                <% if @plan.marriage == "99" %>
+                  <p>設定されていません。</p>
+                <% elsif @plan.marriage == "しない" %>
+                  <p>しない</p>
+                <% elsif @plan.marriage == "未定" %>
+                  <p>未定</p>
+                <% else %>
+                  <p><%= @when_marriage %>結婚<%= @plan.marriage %>。挙式は<%= @plan.wedding %></p>
+                <% end %>
+              </div>
             </div>
-            <div class="single-contents">
-              <h6>こども</h6>
-              <% if @plan.sons == 99 %>
-                <p>設定されていません。</p>
-              <% elsif @plan.sons == 0 %>
-                <p>つくらない。</p>
-              <% elsif @plan.sons == 7 %>
-                <p>未定</p>
-              <% else %>
-                <p><%= @when_first_son %>から<%= @when_last_son %>までに<%= @plan.sons %>人</p>
-              <% end %>
+            <div class="single-contents-plan">
+              <div class="icon">
+                <%= image_tag 'icons/sons.png' %>
+              </div>
+              <div class="contents">
+                <h6>こども</h6>
+                <% if @plan.sons == 99 %>
+                  <p>設定されていません。</p>
+                <% elsif @plan.sons == 0 %>
+                  <p>つくらない。</p>
+                <% elsif @plan.sons == 7 %>
+                  <p>未定</p>
+                <% else %>
+                  <p><%= @when_first_son %>から<%= @when_last_son %>までに<%= @plan.sons %>人</p>
+                <% end %>
+              </div>
             </div>
-            <div class="single-contents">
-              <h6>すまい</h6>
-              <% if @plan.myhome == "99" %>
-                <p>設定されていません。</p>
-              <% elsif @plan.myhome == "0" %>
-                <p>未定</p>
-              <% elsif @plan.myhome =="買わない" %>
-                <p>購入予定なし</p>
-              <% else %>
-                <p><%= @when_myhome %>に購入する</p>
-              <% end %>
+            <div class="single-contents-plan">
+              <div class="icon">
+                <%= image_tag 'icons/house.png' %>
+              </div>
+              <div class="contents">
+                <h6>すまい</h6>
+                <% if @plan.myhome == "99" %>
+                  <p>設定されていません。</p>
+                <% elsif @plan.myhome == "0" %>
+                  <p>未定</p>
+                <% elsif @plan.myhome =="買わない" %>
+                  <p>購入予定なし</p>
+                <% else %>
+                  <p><%= @when_myhome %>に購入する</p>
+                <% end %>
+              </div>
             </div>
-            <div class="single-contents">
-              <h6>お金・その他</h6>
-              <% if @plan.updated_at == @plan.created_at %>
-                <p>設定されていません。</p>
-              <% else %>
-                <p>貯金：<%= @plan.saving %>万円　退職金：<%= @plan.severance %>万円</p>
-              <% end %>
+            <div class="single-contents-plan">
+              <div class="icon">
+                <%= image_tag 'icons/others.png' %>
+              </div>
+              <div class="contents">
+                <h6>お金・その他</h6>
+                <% if @plan.updated_at == @plan.created_at %>
+                  <p>設定されていません。</p>
+                <% else %>
+                  <p>貯金：<%= @plan.saving %>万円　退職金：<%= @plan.severance %>万円</p>
+                <% end %>
+              </div>
             </div>
           </div>
           <div class="bottun-area">
@@ -91,45 +111,70 @@
             <h5>ライフイベントについて</h5>
           </div>
           <div class="des-area">
-            <div class="single-contents">
-              <h6>教育資金</h6>
-              <% if @cost.updated_at == @cost.created_at %>
-                <p>設定されていません。</p>
-              <% else %>
-                <p><%= @cost.edu_cost %>万円</p>
-              <% end %>
+            <div class="single-contents-cost">
+              <div class="icon">
+                <%= image_tag 'icons/education.png' %>
+              </div>
+              <div class="contents">
+                <h6>教育資金</h6>
+                <% if @cost.updated_at == @cost.created_at %>
+                  <p>設定されていません。</p>
+                <% else %>
+                  <p><%= @cost.edu_cost %>万円</p>
+                <% end %>
+              </div>
             </div>
-            <div class="single-contents">
-              <h6>老後の生活費</h6>
-              <% if @cost.updated_at == @cost.created_at %>
-                <p>設定されていません。</p>
-              <% else %>
-                <p><%= @cost.old_cost %>万円</p>
-              <% end %>
+            <div class="single-contents-cost">
+              <div class="icon">
+                <%= image_tag 'icons/old.png' %>
+              </div>
+              <div class="contents">
+                <h6>老後の生活費</h6>
+                <% if @cost.updated_at == @cost.created_at %>
+                  <p>設定されていません。</p>
+                <% else %>
+                  <p><%= @cost.old_cost %>万円</p>
+                <% end %>
+              </div>
             </div>
-            <div class="single-contents">
-              <h6>結婚費用</h6>
-              <% if @cost.updated_at == @cost.created_at %>
-                <p>設定されていません。</p>
-              <% else %>
-                <p><%= @cost.marriage_cost %>万円</p>
-              <% end %>
+            <div class="single-contents-cost">
+              <div class="icon">
+                <%= image_tag 'icons/marriage.png' %>
+              </div>
+              <div class="contents">
+                <h6>結婚費用</h6>
+                <% if @cost.updated_at == @cost.created_at %>
+                  <p>設定されていません。</p>
+                <% else %>
+                  <p><%= @cost.marriage_cost %>万円</p>
+                <% end %>
+              </div>
             </div>
-            <div class="single-contents">
-              <h6>住宅購入費</h6>
-              <% if @cost.updated_at == @cost.created_at %>
-                <p>設定されていません。</p>
-              <% else %>
-                <p><%= @cost.myhome_cost %>万円</p>
-              <% end %>
+            <div class="single-contents-cost">
+              <div class="icon">
+                <%= image_tag 'icons/house.png' %>
+              </div>
+              <div class="contents">
+                <h6>住宅購入費</h6>
+                <% if @cost.updated_at == @cost.created_at %>
+                  <p>設定されていません。</p>
+                <% else %>
+                  <p><%= @cost.myhome_cost %>万円</p>
+                <% end %>
+              </div>
             </div>
-            <div class="single-contents">
-              <h6>その他の費用</h6>
-              <% if @cost.updated_at == @cost.created_at %>
-                <p>設定されていません。</p>
-              <% else %>
-                <p><%= @cost.others %>万円</p>
-              <% end %>
+            <div class="single-contents-cost">
+              <div class="icon">
+                <%= image_tag 'icons/others.png' %>
+              </div>
+              <div class="contents">
+                <h6>その他の費用</h6>
+                <% if @cost.updated_at == @cost.created_at %>
+                  <p>設定されていません。</p>
+                <% else %>
+                  <p><%= @cost.others %>万円</p>
+                <% end %>
+              </div>
             </div>
           </div>
           <div class="bottun-area">
@@ -141,16 +186,26 @@
             <h5>シミュレーション</h5>
           </div>
           <div class="des-area">
-            <div class="single-contents">
-              <h6>資産形成の目標金額</h6>
-              <p><%= @cost.target %>万円</p>
+            <div class="single-contents-target">
+              <div class="icon">
+                <%= image_tag 'icons/target.png' %>
+              </div>
+              <div class="contents">
+                <h6>資産形成の目標金額</h6>
+                <p><%= @cost.target %>万円</p>
+              </div>
             </div>
-            <div class="single-contents">
-              <h6>目標金額までの必要資金</h6>
-              <p><%= @per_year %>万円 / 1年、<%= @per_month %>万円 / 1ヶ月</p>
+            <div class="single-contents-target">
+              <div class="icon">
+                <%= image_tag 'icons/others.png' %>
+              </div>
+              <div class="contents">
+                <h6>目標金額までの必要資金</h6>
+                <p><%= @per_year %>万円 / 1年、<%= @per_month %>万円 / 1ヶ月</p>
+              </div>
             </div>
-            <div class="single-contents">
-              <p>シミュレーション結果の詳細を確認しましょう。</p>
+            <div class="single-contents-target">
+              <p class="bottom">シミュレーション結果の詳細を確認しましょう。</p>
             </div>
           </div>
           <div class="bottun-area">

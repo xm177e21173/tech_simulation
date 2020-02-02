@@ -1,31 +1,16 @@
 class PlansController < ApplicationController
   def new
-    @user = User.find(session[:user_id])
-    @plan = Plan.new(
-      user_id:       session[:user_id],
-      marriage:     "99",
-      when_marriage: 99,
-      wedding:      "99",
-      sons:          99,
-      first_son:     99,
-      last_son:      99,
-      myhome:       "99",
-      when_myhome:   99,
-      birth:         99,
-      retirement:    99,
-      saving:         0,
-      severance:      0,
-      )
+    set_plan
     @plan.save
     redirect_to new_cost_path
   end
     
   def edit
-    @plan = Plan.find_by(user_id: session[:user_id])
+    set_info
   end
   
   def update
-    @plan = Plan.find_by(user_id: session[:user_id])
+    set_info
     if @plan.update(plan_params)
        @plan.retirement = @plan.birth + 65
        @plan.save
@@ -51,5 +36,24 @@ class PlansController < ApplicationController
       :when_myhome,
       :saving,
       :severance)
+  end
+  
+  # 初期値の設定
+  def set_plan
+    @plan = Plan.new(
+      user_id:       session[:user_id],
+      marriage:     "99",
+      when_marriage: 99,
+      wedding:      "99",
+      sons:          99,
+      first_son:     99,
+      last_son:      99,
+      myhome:       "99",
+      when_myhome:   99,
+      birth:         99,
+      retirement:    99,
+      saving:         0,
+      severance:      0,
+      )
   end
 end

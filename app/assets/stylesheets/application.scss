@@ -134,3 +134,23 @@ footer {
   background-color: rgba(0,0,0,0.5);
   color: white; 
 }
+
+.user_info {
+  display: inline-block;
+  margin: 0 20px 0 0;
+  color: #fafafa;
+  font-size: 12px;
+  padding: 16px 0 0 0;
+  
+  p {
+    margin: 0 0 4px 0;
+    font-weight: 100;
+  }
+}
+
+.line {
+  width: 1px;
+  height: 40px;
+  background-color: #fafafa;
+  margin: 15px 20px 0 20px;
+} 

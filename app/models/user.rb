@@ -10,5 +10,6 @@ class User < ApplicationRecord
   validates :password, format: { with: /\A(?=.*?[\d])[a-zA-Z\d]*\z/ }
   
   has_secure_password
+  mount_uploader :image_name, ImageUploader
   
 end

@@ -51,6 +51,7 @@
     background-color: white;
     position: relative;
     border-radius: 15px;
+    margin: 0 0 30px 0;
     
     .contents-area {
       h6 {
@@ -60,7 +61,7 @@
       .icon-area {
         width: 100%;
         text-align: center;
-        margin: 20px 0 40px 0;
+        margin: 30px 0 40px 0;
       
         img {
           height: 100px;
@@ -68,7 +69,7 @@
       }
       
       .single-contents {
-        padding-left: 20px
+        padding-left: 30px
       }
     }
     
@@ -118,8 +119,37 @@
         margin: 0 0 0 0;
       }
       
-      .single-contents {
-        margin: 7px 0 0 0;
+      img {
+        height: 35px;
+      }
+      
+      .icon {
+        display: inline-block;
+        margin: 0 10px 0 0;
+      }
+        
+      .contents {
+        display: inline-block;
+      }
+      
+      .single-contents-plan {
+        margin: 9px 0 0 0;
+      }
+      
+      .single-contents-cost {
+        display: inline-block;
+        width: 35%;
+        margin: 22px 0 0 0;
+      }
+      
+      .single-contents-target {
+        margin: 20px 0 0 0;
+        
+        .bottom {
+          margin: 0 0 0 50px;
+          color: #333333;
+          font-size: 14px;
+        }
       }
     }
     

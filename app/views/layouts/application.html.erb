@@ -30,6 +30,15 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li>
+              <div class="user_info">
+                <p>ログイン中のユーザー　：　<%= @user.name %></p>
+                <p>メールアドレス　　　　：　<%= @user.email %></p>
+              </div>
+            </li>
+            <li>
+              <div class="line"></div>
+            </li>
+            <li>
               <div class="tooltip-mypage">
                 <%= link_to user_path(:id) do %>
                   <%= image_tag "icons/mypage.png" %>

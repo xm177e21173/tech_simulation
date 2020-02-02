@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
   
   def about
+    set_info
   end
 end

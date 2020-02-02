@@ -2,8 +2,9 @@
   <div class="cost-title">
     <div class="left-contents">
       <h1>ライフイベントについて考える</h1>
-      <p>主なライフイベントで必要になる費用について考えてみましょう。</p>
-      <p>考え方のヒントや費用の相場も記載していますので、参考にしてみてください。</p>
+      <p>これから様々なライフイベントがあなたを待っています。</p>
+      <p>結婚、出産、老後、介護・・・</p>
+      <p>これらにかかる費用について相場を参考にしながら考えていきましょう。</p>
     </div>
     <div class="right-contents">
       <%= image_tag 'costs.jpg' %>
@@ -159,7 +160,7 @@
                 </div>
                 <div class="input">
                     <%= f.label :結婚費用を設定してください。 %>
-                    <%= f.text_field :marriage_cost, class: "form" %>万円
+                    <%= f.text_field :marriage_cost, class: 'form-small' %>万円
                 </div>
               </div>
             </div>
@@ -180,8 +181,8 @@
                 <%= image_tag 'icons/marriage.png' %>
               </div>
               <div class="input">
-                  <%= f.label :結婚費用を設定してください。 %>
-                  <%= f.text_field :marriage_cost, class: "form" %>万円
+                <%= f.label :結婚費用を設定してください。 %>
+                <%= f.text_field :marriage_cost, class: 'form-small' %>万円
               </div>
             </div>
           <% else %>
@@ -201,8 +202,8 @@
                 <%= image_tag 'icons/marriage.png' %>
               </div>
               <div class="input">
-                  <%= f.label :結婚費用を設定してください。 %>
-                  <%= f.text_field :marriage_cost, class: "form" %>万円
+                <%= f.label :結婚費用を設定してください。 %>
+                <%= f.text_field :marriage_cost, class: "form-small" %>万円
               </div>
             </div>
           <% end %>
@@ -228,7 +229,7 @@
                 </div>
                 <div class="input">
                   <%= f.label :住宅購入費を設定してください。 %>
-                  <%= f.text_field :myhome_cost, class: "form" %>万円
+                  <%= f.text_field :myhome_cost, class: "form-small" %>万円
                 </div>
               </div>
             </div>
@@ -250,7 +251,7 @@
               </div>
               <div class="input">
                 <%= f.label :住宅購入費を設定してください。 %>
-                <%= f.text_field :myhome_cost, class: "form" %>万円
+                <%= f.text_field :myhome_cost, class: "form-small" %>万円
               </div>
             </div>
           <% end %>
